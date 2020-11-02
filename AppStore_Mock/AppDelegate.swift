@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireNetworkActivityIndicator
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // StatusBardㅔ Alamofire 시도 중 Indicator 띄워주기 위한 옵션 설정
+        NetworkActivityIndicatorManager.shared.isEnabled = true
+        
         return true
     }
 
