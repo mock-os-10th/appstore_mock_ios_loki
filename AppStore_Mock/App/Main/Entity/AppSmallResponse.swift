@@ -9,11 +9,7 @@ struct AppSmallResponse: Decodable {
     var isSuccess: Bool
     var code: Int
     var result: [AppSmallResult]
-    init(isSuccess: Bool, code: Int, result: [AppSmallResult]) {
-        self.isSuccess = isSuccess
-        self.code = code
-        self.result = result
-    }
+    var keyword: String
 }
 
 struct AppSmallResult: Decodable {
@@ -22,11 +18,5 @@ struct AppSmallResult: Decodable {
     var ApplicationName: String
     var Summary: String
     var Price: Int
-    init(IconImage: String, ApplicationId: Int, ApplicationName: String, Summary: String, Price: Int) {
-        self.IconImage = IconImage
-        self.ApplicationId = ApplicationId
-        self.ApplicationName = ApplicationName
-        self.Summary = Summary
-        self.Price = Price
-    }
+    var InAppPurchase: String
 }

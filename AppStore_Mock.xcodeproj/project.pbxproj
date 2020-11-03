@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5683196118E8336B07F1E957 /* Pods_AppStore_Mock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D4F50E01F4295BC634075C /* Pods_AppStore_Mock.framework */; };
+		AFA5879B2551868000AC205E /* AppInsideRatingSmallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFD5FB96255184780037F87C /* AppInsideRatingSmallCell.xib */; };
 		AFA92195254DC33600C640AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA92194254DC33600C640AC /* AppDelegate.swift */; };
 		AFA92197254DC33600C640AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA92196254DC33600C640AC /* SceneDelegate.swift */; };
 		AFA92199254DC33600C640AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA92198254DC33600C640AC /* ViewController.swift */; };
@@ -42,6 +43,9 @@
 		AFA9223A254F184700C640AC /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFA92238254F184700C640AC /* SearchCell.xib */; };
 		AFD5FB6E255035A20037F87C /* AppSmallResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD5FB6D255035A20037F87C /* AppSmallResponse.swift */; };
 		AFD5FB75255036490037F87C /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD5FB74255036490037F87C /* UIImageView.swift */; };
+		AFD5FB83255060E50037F87C /* SnappingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD5FB82255060E50037F87C /* SnappingCollectionViewLayout.swift */; };
+		AFD5FB9225515E430037F87C /* AppDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD5FB9125515E430037F87C /* AppDataManager.swift */; };
+		AFD5FB9F255184CE0037F87C /* AppInsideRatingSmallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD5FB97255184790037F87C /* AppInsideRatingSmallCell.swift */; };
 		AFF911B9254F3FE900C2A8DE /* AppLargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF911B7254F3FE900C2A8DE /* AppLargeCell.swift */; };
 		AFF911BA254F3FE900C2A8DE /* AppLargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFF911B8254F3FE900C2A8DE /* AppLargeCell.xib */; };
 		AFF911BE254F407300C2A8DE /* AppInsideLargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF911BC254F407300C2A8DE /* AppInsideLargeCell.swift */; };
@@ -93,6 +97,10 @@
 		AFA92238254F184700C640AC /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
 		AFD5FB6D255035A20037F87C /* AppSmallResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSmallResponse.swift; sourceTree = "<group>"; };
 		AFD5FB74255036490037F87C /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		AFD5FB82255060E50037F87C /* SnappingCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnappingCollectionViewLayout.swift; path = ../../../../../../Documents/SnappingCollectionViewLayout.swift; sourceTree = "<group>"; };
+		AFD5FB9125515E430037F87C /* AppDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDataManager.swift; path = ../../../../../../../Documents/AppDataManager.swift; sourceTree = "<group>"; };
+		AFD5FB96255184780037F87C /* AppInsideRatingSmallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppInsideRatingSmallCell.xib; sourceTree = "<group>"; };
+		AFD5FB97255184790037F87C /* AppInsideRatingSmallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInsideRatingSmallCell.swift; sourceTree = "<group>"; };
 		AFF911B7254F3FE900C2A8DE /* AppLargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLargeCell.swift; sourceTree = "<group>"; };
 		AFF911B8254F3FE900C2A8DE /* AppLargeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppLargeCell.xib; sourceTree = "<group>"; };
 		AFF911BC254F407300C2A8DE /* AppInsideLargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInsideLargeCell.swift; sourceTree = "<group>"; };
@@ -276,17 +284,11 @@
 		AFA92206254EE5BE00C640AC /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				AFF911D4255028E900C2A8DE /* Entity */,
 				AFA92214254EE69800C640AC /* AppMainViewController.swift */,
 				AFA92215254EE69900C640AC /* AppMainViewController.xib */,
-				AFF911B7254F3FE900C2A8DE /* AppLargeCell.swift */,
-				AFF911B8254F3FE900C2A8DE /* AppLargeCell.xib */,
-				AFF911BC254F407300C2A8DE /* AppInsideLargeCell.swift */,
-				AFF911BD254F407300C2A8DE /* AppInsideLargeCell.xib */,
-				AFF911C5254FA38200C2A8DE /* AppSmallCell.swift */,
-				AFF911C6254FA38200C2A8DE /* AppSmallCell.xib */,
-				AFF911CA254FA83700C2A8DE /* AppInsideSmallCell.swift */,
-				AFF911CB254FA83700C2A8DE /* AppInsideSmallCell.xib */,
+				AFF911D4255028E900C2A8DE /* Entity */,
+				AFD5FB952551846D0037F87C /* Cell */,
+				AFD5FB9025515E2D0037F87C /* DataManager */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -316,8 +318,34 @@
 			children = (
 				AFA92225254EE74600C640AC /* BaseTabBarController.swift */,
 				AFA9222F254F14F400C640AC /* BaseViewController.swift */,
+				AFD5FB82255060E50037F87C /* SnappingCollectionViewLayout.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		AFD5FB9025515E2D0037F87C /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				AFD5FB9125515E430037F87C /* AppDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		AFD5FB952551846D0037F87C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AFF911B7254F3FE900C2A8DE /* AppLargeCell.swift */,
+				AFF911B8254F3FE900C2A8DE /* AppLargeCell.xib */,
+				AFF911BC254F407300C2A8DE /* AppInsideLargeCell.swift */,
+				AFF911BD254F407300C2A8DE /* AppInsideLargeCell.xib */,
+				AFF911C5254FA38200C2A8DE /* AppSmallCell.swift */,
+				AFF911C6254FA38200C2A8DE /* AppSmallCell.xib */,
+				AFF911CA254FA83700C2A8DE /* AppInsideSmallCell.swift */,
+				AFF911CB254FA83700C2A8DE /* AppInsideSmallCell.xib */,
+				AFD5FB97255184790037F87C /* AppInsideRatingSmallCell.swift */,
+				AFD5FB96255184780037F87C /* AppInsideRatingSmallCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		AFF911D4255028E900C2A8DE /* Entity */ = {
@@ -405,6 +433,7 @@
 				AFA9219E254DC33900C640AC /* Assets.xcassets in Resources */,
 				AFF911C8254FA38200C2A8DE /* AppSmallCell.xib in Resources */,
 				AFF911BF254F407300C2A8DE /* AppInsideLargeCell.xib in Resources */,
+				AFA5879B2551868000AC205E /* AppInsideRatingSmallCell.xib in Resources */,
 				AFF911BA254F3FE900C2A8DE /* AppLargeCell.xib in Resources */,
 				AFA921D6254DC43600C640AC /* NotoSansCJKkr-Medium.otf in Resources */,
 				AFA9221C254EE6BB00C640AC /* ArcadeMainViewController.xib in Resources */,
@@ -477,13 +506,16 @@
 				AFA92220254EE6DA00C640AC /* SearchMainViewController.swift in Sources */,
 				AFA921D1254DC43600C640AC /* UIViewController.swift in Sources */,
 				AFA92239254F184700C640AC /* SearchCell.swift in Sources */,
+				AFD5FB9F255184CE0037F87C /* AppInsideRatingSmallCell.swift in Sources */,
 				AFA921CD254DC43600C640AC /* Device.swift in Sources */,
 				AFF911CC254FA83700C2A8DE /* AppInsideSmallCell.swift in Sources */,
 				AFA921CB254DC43600C640AC /* Constant.swift in Sources */,
 				AFD5FB75255036490037F87C /* UIImageView.swift in Sources */,
 				AFF911B9254F3FE900C2A8DE /* AppLargeCell.swift in Sources */,
+				AFD5FB9225515E430037F87C /* AppDataManager.swift in Sources */,
 				AFF911C7254FA38200C2A8DE /* AppSmallCell.swift in Sources */,
 				AFA921CF254DC43600C640AC /* String.swift in Sources */,
+				AFD5FB83255060E50037F87C /* SnappingCollectionViewLayout.swift in Sources */,
 				AFF911D62550290800C2A8DE /* AppLargeResponse.swift in Sources */,
 				AFA921D3254DC43600C640AC /* UIFont.swift in Sources */,
 				AFA92216254EE69900C640AC /* AppMainViewController.swift in Sources */,

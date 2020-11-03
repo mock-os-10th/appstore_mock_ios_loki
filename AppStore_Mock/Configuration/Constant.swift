@@ -8,4 +8,5 @@
 import Alamofire
 
 struct Constant {
+    static let BASEL_URL = "https://www.signaturecp.co.kr"
 }

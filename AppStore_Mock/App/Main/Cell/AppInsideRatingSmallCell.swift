@@ -1,13 +1,22 @@
 //
-//  AppInsideSmallCell.swift
+//  AppInsideRatingSmallCell.swift
 //  AppStore_Mock
 //
-//  Created by Seok on 2020/11/02.
+//  Created by Seok on 2020/11/03.
 //
 
 import UIKit
 
-class AppInsideSmallCell: UICollectionViewCell {
+class AppInsideRatingSmallCell: UICollectionViewCell {
+    var rating: String? {
+        didSet {
+            
+            guard let rating = rating else {
+                return
+            }
+            ratingLabel.text = rating
+        }
+    }
     var data: AppSmallResult? {
         didSet {
             guard let data = data else {
@@ -16,9 +25,12 @@ class AppInsideSmallCell: UICollectionViewCell {
             appNameLabel.text = data.ApplicationName
             appDetailLabel.text = data.Summary
             appIconImageView.setImage(url: data.IconImage)
+            if data.InAppPurchase == "Y" {
+                insideAppDownLoadLabel.isHidden = true
+            }
         }
     }
-
+    
     @IBOutlet weak var appIconImageView: UIImageView! {
         didSet {
             appIconImageView.layer.cornerRadius = 8
@@ -33,7 +45,8 @@ class AppInsideSmallCell: UICollectionViewCell {
             downloadButton.layer.masksToBounds = true
         }
     }
-    
+    @IBOutlet weak var insideAppDownLoadLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

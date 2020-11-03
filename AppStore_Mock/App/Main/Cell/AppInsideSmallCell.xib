@@ -26,7 +26,7 @@
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="tao-ch-3mq">
-                        <rect key="frame" x="84" y="43" width="160" height="64"/>
+                        <rect key="frame" x="84" y="43" width="175" height="64"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RP-3o-Bix">
                                 <rect key="frame" x="0.0" y="0.0" width="57" height="31.5"/>
@@ -43,13 +43,19 @@
                         </subviews>
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEw-mX-Cqm">
-                        <rect key="frame" x="252" y="60" width="80" height="30"/>
-                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                        <rect key="frame" x="267" y="60" width="65" height="30"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="bir-fn-b3x"/>
+                            <constraint firstAttribute="width" constant="65" id="bir-fn-b3x"/>
                         </constraints>
                         <state key="normal" title="받기"/>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 내 구입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4V-d3-Khl">
+                        <rect key="frame" x="283" y="94" width="33" height="10"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -59,8 +65,10 @@
                 <constraint firstItem="dEw-mX-Cqm" firstAttribute="leading" secondItem="tao-ch-3mq" secondAttribute="trailing" constant="8" id="81H-JY-wXX"/>
                 <constraint firstItem="l6N-Mk-NWN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="8Qk-cN-bgz"/>
                 <constraint firstItem="tao-ch-3mq" firstAttribute="bottom" secondItem="l6N-Mk-NWN" secondAttribute="bottom" id="Jek-ay-5KF"/>
+                <constraint firstItem="f4V-d3-Khl" firstAttribute="top" secondItem="dEw-mX-Cqm" secondAttribute="bottom" constant="4" id="OXg-Z1-GrN"/>
                 <constraint firstItem="tao-ch-3mq" firstAttribute="leading" secondItem="l6N-Mk-NWN" secondAttribute="trailing" constant="12" id="PTD-3P-MhF"/>
                 <constraint firstItem="l6N-Mk-NWN" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Y22-l3-Y1t"/>
+                <constraint firstItem="f4V-d3-Khl" firstAttribute="centerX" secondItem="dEw-mX-Cqm" secondAttribute="centerX" id="bZQ-l7-CRa"/>
                 <constraint firstAttribute="trailing" secondItem="dEw-mX-Cqm" secondAttribute="trailing" id="rcD-qq-wcn"/>
                 <constraint firstItem="tao-ch-3mq" firstAttribute="top" secondItem="l6N-Mk-NWN" secondAttribute="top" id="yvt-ZR-JUj"/>
             </constraints>
@@ -70,13 +78,14 @@
                 <outlet property="appIconImageView" destination="l6N-Mk-NWN" id="wEn-sg-Mhv"/>
                 <outlet property="appNameLabel" destination="5RP-3o-Bix" id="QzJ-Id-fDu"/>
                 <outlet property="downloadButton" destination="dEw-mX-Cqm" id="dYO-8m-8Xn"/>
+                <outlet property="insideAppDownLoadLabel" destination="f4V-d3-Khl" id="Zi5-G1-erN"/>
             </connections>
             <point key="canvasLocation" x="340.57971014492756" y="168.08035714285714"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
