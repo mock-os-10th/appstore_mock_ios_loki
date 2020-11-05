@@ -7,7 +7,8 @@
 
 import UIKit
 
-class AppMainViewController: UIViewController {
+
+class AppMainViewController: BaseViewController {
     var appLargeResponse: AppLargeResponse = AppLargeResponse(isSuccess: true, code: 100, result: [AppLargeResult(thumbnailUrl: "https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/d5/14/a7/d514a7fb-69e6-7519-e753-2527d12939f1/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/200x200bb.png", ApplicationID: 1082345, ApplicationName: "어몽 어스", Summary: "마피아 게임", Category: "새로운 게임"), AppLargeResult(thumbnailUrl: "https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/d5/14/a7/d514a7fb-69e6-7519-e753-2527d12939f1/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/200x200bb.png", ApplicationID: 1082345, ApplicationName: "어몽 어스", Summary: "마피아 게임", Category: "새로운 게임"), AppLargeResult(thumbnailUrl: "https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/d5/14/a7/d514a7fb-69e6-7519-e753-2527d12939f1/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/200x200bb.png", ApplicationID: 1082345, ApplicationName: "어몽 어스", Summary: "마피아 게임", Category: "새로운 게임")])
     
     var appSmallResponses: [AppSmallResponse] = [] {
@@ -20,21 +21,30 @@ class AppMainViewController: UIViewController {
         }
     }
     
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        self.navigationItem.title = "앱"
+        
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.collectionView.register(UINib(nibName: "AppLargeCell", bundle: nil), forCellWithReuseIdentifier: "AppLargeCell")
         self.collectionView.register(UINib(nibName: "AppSmallCell", bundle: nil), forCellWithReuseIdentifier: "AppSmallCell")
+        
         self.showIndicator()
-        AppDataManager().getAppList(targetList: "popularity", viewController: self)
-        AppDataManager().getAppList(targetList: "newupdate", viewController: self)
-        AppDataManager().getAppList(targetList: "popularityfinance", viewController: self)
+        
+        AppDataManager.shared.getAppList(targetList: "popularity", viewController: self)
+        AppDataManager.shared.getAppList(targetList: "newupdate", viewController: self)
+        AppDataManager.shared.getAppList(targetList: "popularityfinance", viewController: self)
+        
+//        AppDataManager().getAppList(targetList: "popularity", viewController: self)
+//        AppDataManager().getAppList(targetList: "newupdate", viewController: self)
+//        AppDataManager().getAppList(targetList: "popularityfinance", viewController: self)
     }
 
 
@@ -57,6 +67,10 @@ extension AppMainViewController {
     func failedToRequest(message: String) {
         self.dismissIndicator()
         self.presentAlert(title: message)
+    }
+    
+    @objc func openAccountViewController() {
+        self.presentAlert(title: "아직 구현되지 않은 부분입니다.")
     }
 }
 
