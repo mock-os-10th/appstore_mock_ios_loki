@@ -8,6 +8,7 @@
 import UIKit
 
 class AppSmallCell: UICollectionViewCell {
+    var parentViewController: AppMainViewController?
     var result: [AppSmallResult]?
     var isRatingResult: Bool = false
     var category: String? {
@@ -64,6 +65,14 @@ extension AppSmallCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
         }
         
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let result = result, let parentViewController = parentViewController else {
+            return
+        }
+        let vc = AppDetailViewController(result[indexPath.row].ApplicationId)
+        parentViewController.navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

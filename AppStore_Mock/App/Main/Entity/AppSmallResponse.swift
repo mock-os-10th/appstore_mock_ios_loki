@@ -10,6 +10,7 @@ struct AppSmallResponse: Decodable {
     var code: Int
     var result: [AppSmallResult]
     var keyword: String
+    var message: String
 }
 
 struct AppSmallResult: Decodable {

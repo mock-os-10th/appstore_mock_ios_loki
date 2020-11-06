@@ -103,7 +103,7 @@ extension AppMainViewController: UICollectionViewDelegate, UICollectionViewDataS
                 default:
                     break
                 }
-                
+                cell.parentViewController = self
                 cell.result = appSmallResponses[indexPath.row - 1].result
                 
                 return cell
