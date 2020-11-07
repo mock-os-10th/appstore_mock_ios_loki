@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AppDetailImagesCell" rowHeight="463" id="uJO-ce-gAF" customClass="AppDetailImagesCell" customModule="AppStore_Mock" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="625" height="463"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uJO-ce-gAF" id="ihP-wp-2u3">
+                <rect key="frame" x="0.0" y="0.0" width="625" height="463"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미리보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0k-zN-3Ff">
+                        <rect key="frame" x="8" y="4" width="73" height="25.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gMg-IX-KYa">
+                        <rect key="frame" x="8" y="33.5" width="617" height="429.5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X2U-HV-Xdd">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="gMg-IX-KYa" secondAttribute="bottom" id="Fui-lT-AB5"/>
+                    <constraint firstAttribute="trailing" secondItem="gMg-IX-KYa" secondAttribute="trailing" id="TmU-4D-cZ7"/>
+                    <constraint firstItem="q0k-zN-3Ff" firstAttribute="leading" secondItem="ihP-wp-2u3" secondAttribute="leading" constant="8" id="fAX-A3-amT"/>
+                    <constraint firstItem="gMg-IX-KYa" firstAttribute="top" secondItem="q0k-zN-3Ff" secondAttribute="bottom" constant="4" id="jhP-bO-pE1"/>
+                    <constraint firstItem="gMg-IX-KYa" firstAttribute="leading" secondItem="ihP-wp-2u3" secondAttribute="leading" constant="8" id="mdr-Cj-Xt0"/>
+                    <constraint firstItem="q0k-zN-3Ff" firstAttribute="top" secondItem="ihP-wp-2u3" secondAttribute="top" constant="4" id="pMj-hh-NEs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="collectionView" destination="gMg-IX-KYa" id="ylj-UQ-sEZ"/>
+            </connections>
+            <point key="canvasLocation" x="814" y="205"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

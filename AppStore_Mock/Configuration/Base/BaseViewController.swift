@@ -17,15 +17,22 @@ class BaseViewController: UIViewController {
         self.view.backgroundColor = .white
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
-        setUpUI()
+        setUpAccountButton()
     }
     
-    func setUpUI() {
+    override func viewWillAppear(_ animated: Bool) {
+        setUpAccountButton()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        dismissAccoutButton()
+    }
+    func setUpAccountButton() {
         guard let navigationBar = self.navigationController?.navigationBar else {
             return
         }
         accoutButton.setImage(UIImage(systemName: "person.circle"), for: .normal)
-        
+        accoutButton.tag = 1
         navigationBar.addSubview(accoutButton)
 
         accoutButton.contentVerticalAlignment = .fill
@@ -37,6 +44,10 @@ class BaseViewController: UIViewController {
             make.bottom.equalTo(navigationBar.snp.bottom).offset(-12)
             make.height.width.equalTo(35)
         }
+    }
+    
+    func dismissAccoutButton() {
+        accoutButton.removeFromSuperview()
     }
 }
 

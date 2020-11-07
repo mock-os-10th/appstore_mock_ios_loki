@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppDetailInfoCell: UICollectionViewCell {
+class AppDetailInfoCell: UITableViewCell {
 
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var devNameLabel: UILabel!

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppDetailInfoTableViewCell: UICollectionViewCell {
+class AppDetailInfoTableViewCell: UITableViewCell {
     var data: [(String, String)]?
 
     @IBOutlet weak var tableView: UITableView!
@@ -19,6 +19,10 @@ class AppDetailInfoTableViewCell: UICollectionViewCell {
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "AppDetailInfoTableViewSmallCell", bundle: nil), forCellReuseIdentifier: "AppDetailInfoTableViewSmallCell")
         self.tableView.register(UINib(nibName: "AppDetailInfoTableViewLargeCell", bundle: nil), forCellReuseIdentifier: "AppDetailInfoTableViewLargeCell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "default")
+        self.tableView.allowsSelection = false
+        self.tableView.estimatedRowHeight = 80
+        self.tableView.rowHeight = UITableView.automaticDimension
         
         self.tableView.reloadData()
     }
@@ -32,9 +36,9 @@ extension AppDetailInfoTableViewCell: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let data = data else {
-            return UITableViewCell()
+            return tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath)
         }
-        if data[indexPath.row].0 == "언어" || data[indexPath.row].1 == "호환성" {
+        if data[indexPath.row].0 == "언어" || data[indexPath.row].0 == "호환성" {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "AppDetailInfoTableViewLargeCell") as? AppDetailInfoTableViewLargeCell {
                 
                 cell.keywordLabel.text = data[indexPath.row].0
@@ -52,8 +56,6 @@ extension AppDetailInfoTableViewCell: UITableViewDelegate, UITableViewDataSource
             }
         }
         
-        return UITableViewCell()
+        return tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath)
     }
-    
-    
 }

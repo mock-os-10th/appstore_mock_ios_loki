@@ -7,9 +7,10 @@
 
 import UIKit
 
-class AppDetailImagesCell: UICollectionViewCell {
+class AppDetailImagesCell: UITableViewCell {
     
     var images: [AppDetailImage]?
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -20,6 +21,12 @@ class AppDetailImagesCell: UICollectionViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "AppDetailInsideImageCell", bundle: nil), forCellWithReuseIdentifier: "AppDetailInsideImageCell")
+        
+        let layout = SnappingCollectionViewLayout()
+        layout.scrollDirection = .horizontal
+        collectionView.collectionViewLayout = layout
+        collectionView.decelerationRate = .fast
+        collectionView.contentInset = .init(top: 0, left: 8, bottom: 0, right: 8)
         
     }
 
@@ -48,7 +55,7 @@ extension AppDetailImagesCell: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.bounds.size.width - 150, height: 400)
+        return CGSize(width: self.bounds.size.width / 2 + 60, height: 400)
     }
     
     

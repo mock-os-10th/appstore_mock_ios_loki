@@ -23,42 +23,36 @@ class AppDetailViewController: UIViewController {
     
     var appDetailResult: AppDetailResult? {
         didSet {
-            guard let result = appDetailResult else {
-                return
-            }
-            
-            ageLabel.text = "\(result.Ages)+"
-            devNameLabel.text = result.DevName
-            categoryLabel.text = result.Category
-            languageLabel.text = result.Word
-            languageCountLabel.text = "+ \(result.WordCount - 1)개 언어"
+            self.dismissIndicator()
+            self.tableView.reloadData()
         }
     }
-
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var devNameLabel: UILabel!
-    @IBOutlet weak var languageLabel: UILabel!
-    @IBOutlet weak var languageCountLabel: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-        self.collectionView.register(UINib(nibName: "AppDetailImagesCell", bundle: nil), forCellWithReuseIdentifier: "AppDetailImagesCell")
-        self.collectionView.register(UINib(nibName: "AppDetailInfoCell", bundle: nil), forCellWithReuseIdentifier: "AppDetailInfoCell")
-        self.collectionView.register(UINib(nibName: "AppDetailInfoTableViewCell", bundle: nil), forCellWithReuseIdentifier: "AppDetailInfoTableViewCell")
+
         
         if let applicationId = applicationId {
-            self.dismissIndicator()
-            self.collectionView.reloadData()
+            AppDetailDataManager.shared.getAppDetailInfoOfApplicationId(applicationId: applicationId, viewController: self)
+            self.showIndicator()
         }
         
-    }
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "default")
+        self.tableView.register(UINib(nibName: "AppDetailStackViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailStackViewCell")
+        self.tableView.register(UINib(nibName: "AppDetailImagesCell", bundle: nil), forCellReuseIdentifier: "AppDetailImagesCell")
+        self.tableView.register(UINib(nibName: "AppDetailInfoCell", bundle: nil), forCellReuseIdentifier: "AppDetailInfoCell")
+        self.tableView.register(UINib(nibName: "AppDetailInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailInfoTableViewCell")
+        self.tableView.allowsSelection = false
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableView.automaticDimension
 
+    }
 
     /*
     // MARK: - Navigation
@@ -75,8 +69,7 @@ class AppDetailViewController: UIViewController {
 extension AppDetailViewController {
     func didRetrieveAppList(result: AppDetailResult) {
         self.appDetailResult = result
-        self.dismissIndicator()
-        self.collectionView.reloadData()
+        print("\(result.ApplicationName) 정상적으로 호출 완료")
     }
     
     func failedToRequest(message: String) {
@@ -85,38 +78,47 @@ extension AppDetailViewController {
     }
 }
 
-extension AppDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+extension AppDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let result = appDetailResult else {
-            return UICollectionViewCell()
+            return tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath)
         }
         
         switch indexPath.row {
         case 0:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppDetailImagesCell", for: indexPath) as? AppDetailImagesCell {
-                
-                cell.images = result.ImageSet
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "AppDetailStackViewCell", for: indexPath) as? AppDetailStackViewCell {
+                cell.ageLabel.text = "\(result.Ages)+"
+                cell.categoryLabel.text = result.Category
+                cell.chartLabel.text = "#\(result.Chart)"
+                cell.devNameLabel.text = result.DevName
+                cell.wordLabel.text = result.Word
+                cell.wordCountLabel.text = "+ \(result.WordCount)개 언어"
                 
                 return cell
             }
         case 1:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppDetailInfoCell", for: indexPath) as? AppDetailInfoCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "AppDetailImagesCell", for: indexPath) as? AppDetailImagesCell {
+                cell.images = result.ImageSet
+                
+                return cell
+            }
+        case 2:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "AppDetailInfoCell", for: indexPath) as? AppDetailInfoCell {
                 cell.infoLabel.text = result.DetailInfo
                 cell.devNameLabel.text = result.DevName
                 
                 return cell
             }
-        case 2:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppDetailInfoTableViewCell", for: indexPath) as? AppDetailInfoTableViewCell {
-                cell.data = [("제공자", result.DevName), ("크기", result.AppSize), ("카테고리", result.Category), ("호환성", result.Compatibility), ("언어", result.WordDetail), ("연령 등급", "\(result.Ages)+"), ("저작권", result.Copyright)]
+        case 3:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "AppDetailInfoTableViewCell", for: indexPath) as? AppDetailInfoTableViewCell {
+                cell.data = [("제공자", result.DevName), ("크기", result.Appsize), ("카테고리", result.Category), ("호환성", result.Compatibility), ("언어", result.WordDetail), ("연령 등급", "\(result.Ages)+"), ("저작권", result.Copyright)]
                 
                 return cell
             }
@@ -124,8 +126,16 @@ extension AppDetailViewController: UICollectionViewDelegate, UICollectionViewDat
             break
         }
         
-        return UICollectionViewCell()
+        return tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath)
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 1 {
+            return 420
+        }
+        
+        return UITableView.automaticDimension
+    }
     
+
 }

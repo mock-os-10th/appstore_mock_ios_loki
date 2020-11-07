@@ -62,6 +62,9 @@
 		AFD5FB83255060E50037F87C /* SnappingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD5FB82255060E50037F87C /* SnappingCollectionViewLayout.swift */; };
 		AFD5FB9225515E430037F87C /* AppDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD5FB9125515E430037F87C /* AppDataManager.swift */; };
 		AFD5FB9F255184CE0037F87C /* AppInsideRatingSmallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD5FB97255184790037F87C /* AppInsideRatingSmallCell.swift */; };
+		AFE398DB2555FFA10068114E /* AppDetailStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE398D92555FFA10068114E /* AppDetailStackViewCell.swift */; };
+		AFE398DC2555FFA10068114E /* AppDetailStackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFE398DA2555FFA10068114E /* AppDetailStackViewCell.xib */; };
+		AFE398DF255695290068114E /* AppDetalInfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE398DE255695290068114E /* AppDetalInfoTableView.swift */; };
 		AFF911B9254F3FE900C2A8DE /* AppLargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF911B7254F3FE900C2A8DE /* AppLargeCell.swift */; };
 		AFF911BA254F3FE900C2A8DE /* AppLargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFF911B8254F3FE900C2A8DE /* AppLargeCell.xib */; };
 		AFF911BE254F407300C2A8DE /* AppInsideLargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF911BC254F407300C2A8DE /* AppInsideLargeCell.swift */; };
@@ -133,6 +136,9 @@
 		AFD5FB9125515E430037F87C /* AppDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDataManager.swift; path = ../../../../../../../Documents/AppDataManager.swift; sourceTree = "<group>"; };
 		AFD5FB96255184780037F87C /* AppInsideRatingSmallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppInsideRatingSmallCell.xib; sourceTree = "<group>"; };
 		AFD5FB97255184790037F87C /* AppInsideRatingSmallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInsideRatingSmallCell.swift; sourceTree = "<group>"; };
+		AFE398D92555FFA10068114E /* AppDetailStackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailStackViewCell.swift; sourceTree = "<group>"; };
+		AFE398DA2555FFA10068114E /* AppDetailStackViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailStackViewCell.xib; sourceTree = "<group>"; };
+		AFE398DE255695290068114E /* AppDetalInfoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetalInfoTableView.swift; sourceTree = "<group>"; };
 		AFF911B7254F3FE900C2A8DE /* AppLargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLargeCell.swift; sourceTree = "<group>"; };
 		AFF911B8254F3FE900C2A8DE /* AppLargeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppLargeCell.xib; sourceTree = "<group>"; };
 		AFF911BC254F407300C2A8DE /* AppInsideLargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInsideLargeCell.swift; sourceTree = "<group>"; };
@@ -167,22 +173,11 @@
 		AF3137362553F6A1000B44CC /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				AFCE48192555A3270081E72E /* Cell */,
 				AFCE481425557ECB0081E72E /* DataManager */,
 				AF31373C25554DBA000B44CC /* Entity */,
 				AF3137372553F6CB000B44CC /* AppDetailViewController.swift */,
 				AF3137382553F6CB000B44CC /* AppDetailViewController.xib */,
-				AF3137402555650D000B44CC /* AppDetailImagesCell.swift */,
-				AF3137412555650D000B44CC /* AppDetailImagesCell.xib */,
-				AF313745255565B8000B44CC /* AppDetailInsideImageCell.swift */,
-				AF313746255565B8000B44CC /* AppDetailInsideImageCell.xib */,
-				AFCE47E725556DDA0081E72E /* AppDetailInfoCell.swift */,
-				AFCE47E825556DDA0081E72E /* AppDetailInfoCell.xib */,
-				AFCE4801255575500081E72E /* AppDetailInfoTableViewCell.swift */,
-				AFCE4802255575500081E72E /* AppDetailInfoTableViewCell.xib */,
-				AFCE4806255577870081E72E /* AppDetailInfoTableViewSmallCell.swift */,
-				AFCE4807255577870081E72E /* AppDetailInfoTableViewSmallCell.xib */,
-				AFCE480B255578400081E72E /* AppDetailInfoTableViewLargeCell.swift */,
-				AFCE480C255578400081E72E /* AppDetailInfoTableViewLargeCell.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -395,6 +390,28 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		AFCE48192555A3270081E72E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AF3137402555650D000B44CC /* AppDetailImagesCell.swift */,
+				AF3137412555650D000B44CC /* AppDetailImagesCell.xib */,
+				AF313745255565B8000B44CC /* AppDetailInsideImageCell.swift */,
+				AF313746255565B8000B44CC /* AppDetailInsideImageCell.xib */,
+				AFCE47E725556DDA0081E72E /* AppDetailInfoCell.swift */,
+				AFCE47E825556DDA0081E72E /* AppDetailInfoCell.xib */,
+				AFCE4801255575500081E72E /* AppDetailInfoTableViewCell.swift */,
+				AFCE4802255575500081E72E /* AppDetailInfoTableViewCell.xib */,
+				AFCE4806255577870081E72E /* AppDetailInfoTableViewSmallCell.swift */,
+				AFCE4807255577870081E72E /* AppDetailInfoTableViewSmallCell.xib */,
+				AFCE480B255578400081E72E /* AppDetailInfoTableViewLargeCell.swift */,
+				AFCE480C255578400081E72E /* AppDetailInfoTableViewLargeCell.xib */,
+				AFE398D92555FFA10068114E /* AppDetailStackViewCell.swift */,
+				AFE398DA2555FFA10068114E /* AppDetailStackViewCell.xib */,
+				AFE398DE255695290068114E /* AppDetalInfoTableView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		AFD5FB9025515E2D0037F87C /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +522,7 @@
 				AFA9222C254EE78E00C640AC /* TodayMainViewController.xib in Resources */,
 				AFCE4804255575500081E72E /* AppDetailInfoTableViewCell.xib in Resources */,
 				AFCE4809255577870081E72E /* AppDetailInfoTableViewSmallCell.xib in Resources */,
+				AFE398DC2555FFA10068114E /* AppDetailStackViewCell.xib in Resources */,
 				AFA921D8254DC43600C640AC /* NotoSansCJKkr-Bold.otf in Resources */,
 				AFA921D7254DC43600C640AC /* NotoSansCJKkr-Regular.otf in Resources */,
 				AFA9219E254DC33900C640AC /* Assets.xcassets in Resources */,
@@ -574,6 +592,7 @@
 			files = (
 				AFA92199254DC33600C640AC /* ViewController.swift in Sources */,
 				AFCE480D255578400081E72E /* AppDetailInfoTableViewLargeCell.swift in Sources */,
+				AFE398DF255695290068114E /* AppDetalInfoTableView.swift in Sources */,
 				AFA92195254DC33600C640AC /* AppDelegate.swift in Sources */,
 				AFA92226254EE74600C640AC /* BaseTabBarController.swift in Sources */,
 				AFA9222B254EE78E00C640AC /* TodayMainViewController.swift in Sources */,
@@ -590,6 +609,7 @@
 				AF3137392553F6CB000B44CC /* AppDetailViewController.swift in Sources */,
 				AFA921D1254DC43600C640AC /* UIViewController.swift in Sources */,
 				AFA92239254F184700C640AC /* SearchCell.swift in Sources */,
+				AFE398DB2555FFA10068114E /* AppDetailStackViewCell.swift in Sources */,
 				AFD5FB9F255184CE0037F87C /* AppInsideRatingSmallCell.swift in Sources */,
 				AFA921CD254DC43600C640AC /* Device.swift in Sources */,
 				AFF911CC254FA83700C2A8DE /* AppInsideSmallCell.swift in Sources */,

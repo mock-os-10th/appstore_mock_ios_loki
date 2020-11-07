@@ -35,7 +35,7 @@ class AppMainViewController: BaseViewController {
         self.collectionView.delegate = self
         self.collectionView.register(UINib(nibName: "AppLargeCell", bundle: nil), forCellWithReuseIdentifier: "AppLargeCell")
         self.collectionView.register(UINib(nibName: "AppSmallCell", bundle: nil), forCellWithReuseIdentifier: "AppSmallCell")
-        
+        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "default")
         self.showIndicator()
         
         AppDataManager.shared.getAppList(targetList: "popularity", viewController: self)
@@ -109,7 +109,7 @@ extension AppMainViewController: UICollectionViewDelegate, UICollectionViewDataS
                 return cell
             }
         }
-        return UICollectionViewCell()
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "default", for: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

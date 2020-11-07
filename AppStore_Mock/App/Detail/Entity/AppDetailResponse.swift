@@ -18,12 +18,12 @@ struct AppDetailResult: Decodable {
     var ApplicationName: String
     var Price: Int
     var Summary: String
-    var Evaulation: Float
+    var InAppPurchase: String
     var Ages: Int
     var Chart: Int
     var DevName: String
     var DetailInfo: String
-    var AppSize: String
+    var Appsize: String
     var Category: String
     var Compatibility: String
     var Word: String
