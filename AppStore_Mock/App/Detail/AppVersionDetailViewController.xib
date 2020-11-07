@@ -11,7 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppVersionDetailViewController" customModule="AppStore_Mock" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="UMF-RY-82X" id="JhP-e4-f91"/>
+                <outlet property="tableView" destination="br0-39-hro" id="Nvz-7s-w7z"/>
+                <outlet property="tableViewHeight" destination="llx-a2-eGr" id="Nji-Z8-aZj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,41 +21,47 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JG4-Ne-fbi">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JG4-Ne-fbi">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgn-vO-vOx">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                        <view contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bgn-vO-vOx">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="192"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버전 기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCP-r9-GM8">
-                                    <rect key="frame" x="12" y="8" width="111" height="36"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버전 기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yte-KC-QuJ">
+                                    <rect key="frame" x="12" y="8" width="390" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="7kH-mg-G4v"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UMF-RY-82X">
-                                    <rect key="frame" x="12" y="54" width="390" height="749"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="br0-39-hro">
+                                    <rect key="frame" x="12" y="52" width="390" height="128"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="128" id="llx-a2-eGr"/>
+                                    </constraints>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="qCP-r9-GM8" firstAttribute="top" secondItem="Bgn-vO-vOx" secondAttribute="top" constant="8" id="28F-eG-iYZ"/>
-                                <constraint firstAttribute="bottom" secondItem="UMF-RY-82X" secondAttribute="bottom" constant="15" id="AXw-WY-Lti"/>
-                                <constraint firstItem="UMF-RY-82X" firstAttribute="top" secondItem="qCP-r9-GM8" secondAttribute="bottom" constant="10" id="J0u-Yf-ssV"/>
-                                <constraint firstItem="qCP-r9-GM8" firstAttribute="leading" secondItem="Bgn-vO-vOx" secondAttribute="leading" constant="12" id="SWW-iZ-L8f"/>
-                                <constraint firstAttribute="trailing" secondItem="UMF-RY-82X" secondAttribute="trailing" constant="12" id="bue-bU-JFQ"/>
-                                <constraint firstItem="UMF-RY-82X" firstAttribute="leading" secondItem="Bgn-vO-vOx" secondAttribute="leading" constant="12" id="fLF-yF-eEp"/>
+                                <constraint firstItem="Yte-KC-QuJ" firstAttribute="top" secondItem="Bgn-vO-vOx" secondAttribute="top" constant="8" id="3ZF-wr-3I3"/>
+                                <constraint firstAttribute="trailing" secondItem="Yte-KC-QuJ" secondAttribute="trailing" constant="12" id="VGg-IE-eKu"/>
+                                <constraint firstAttribute="trailing" secondItem="br0-39-hro" secondAttribute="trailing" constant="12" id="bZR-6s-Nzr"/>
+                                <constraint firstAttribute="bottom" secondItem="br0-39-hro" secondAttribute="bottom" constant="12" id="mIh-gB-na6"/>
+                                <constraint firstItem="br0-39-hro" firstAttribute="leading" secondItem="Bgn-vO-vOx" secondAttribute="leading" constant="12" id="shj-MU-waX"/>
+                                <constraint firstItem="Yte-KC-QuJ" firstAttribute="leading" secondItem="Bgn-vO-vOx" secondAttribute="leading" constant="12" id="uRx-Kq-VPq"/>
+                                <constraint firstItem="br0-39-hro" firstAttribute="top" secondItem="Yte-KC-QuJ" secondAttribute="bottom" constant="8" id="vhX-Nv-PY1"/>
                             </constraints>
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="top" secondItem="RN6-MV-GsD" secondAttribute="top" id="6n4-Ku-vgH"/>
-                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="width" secondItem="6Fq-V2-rgt" secondAttribute="width" id="MGe-Bz-joJ"/>
-                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="trailing" secondItem="RN6-MV-GsD" secondAttribute="trailing" id="NAh-0r-3ha"/>
-                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="height" secondItem="6Fq-V2-rgt" secondAttribute="height" id="dmg-7b-ydC"/>
-                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="bottom" secondItem="RN6-MV-GsD" secondAttribute="bottom" id="nLv-xE-fvr"/>
-                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="leading" secondItem="RN6-MV-GsD" secondAttribute="leading" id="znS-Md-inG"/>
+                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="width" secondItem="JG4-Ne-fbi" secondAttribute="width" id="7rm-cX-aw3"/>
+                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="bottom" secondItem="JG4-Ne-fbi" secondAttribute="bottom" id="JuZ-gf-bkL"/>
+                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="trailing" secondItem="JG4-Ne-fbi" secondAttribute="trailing" id="XDN-nk-0AO"/>
+                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="top" secondItem="JG4-Ne-fbi" secondAttribute="top" id="fcq-RU-tAK"/>
+                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="leading" secondItem="JG4-Ne-fbi" secondAttribute="leading" id="iyV-6C-nJ8"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="RN6-MV-GsD"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="6Fq-V2-rgt"/>
