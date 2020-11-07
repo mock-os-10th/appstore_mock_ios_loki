@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppVersionDetailViewController" customModule="AppStore_Mock" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="UMF-RY-82X" id="JhP-e4-f91"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JG4-Ne-fbi">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgn-vO-vOx">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버전 기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCP-r9-GM8">
+                                    <rect key="frame" x="12" y="8" width="111" height="36"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UMF-RY-82X">
+                                    <rect key="frame" x="12" y="54" width="390" height="749"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="qCP-r9-GM8" firstAttribute="top" secondItem="Bgn-vO-vOx" secondAttribute="top" constant="8" id="28F-eG-iYZ"/>
+                                <constraint firstAttribute="bottom" secondItem="UMF-RY-82X" secondAttribute="bottom" constant="15" id="AXw-WY-Lti"/>
+                                <constraint firstItem="UMF-RY-82X" firstAttribute="top" secondItem="qCP-r9-GM8" secondAttribute="bottom" constant="10" id="J0u-Yf-ssV"/>
+                                <constraint firstItem="qCP-r9-GM8" firstAttribute="leading" secondItem="Bgn-vO-vOx" secondAttribute="leading" constant="12" id="SWW-iZ-L8f"/>
+                                <constraint firstAttribute="trailing" secondItem="UMF-RY-82X" secondAttribute="trailing" constant="12" id="bue-bU-JFQ"/>
+                                <constraint firstItem="UMF-RY-82X" firstAttribute="leading" secondItem="Bgn-vO-vOx" secondAttribute="leading" constant="12" id="fLF-yF-eEp"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="top" secondItem="RN6-MV-GsD" secondAttribute="top" id="6n4-Ku-vgH"/>
+                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="width" secondItem="6Fq-V2-rgt" secondAttribute="width" id="MGe-Bz-joJ"/>
+                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="trailing" secondItem="RN6-MV-GsD" secondAttribute="trailing" id="NAh-0r-3ha"/>
+                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="height" secondItem="6Fq-V2-rgt" secondAttribute="height" id="dmg-7b-ydC"/>
+                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="bottom" secondItem="RN6-MV-GsD" secondAttribute="bottom" id="nLv-xE-fvr"/>
+                        <constraint firstItem="Bgn-vO-vOx" firstAttribute="leading" secondItem="RN6-MV-GsD" secondAttribute="leading" id="znS-Md-inG"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="RN6-MV-GsD"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="6Fq-V2-rgt"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JG4-Ne-fbi" secondAttribute="bottom" id="dl1-cU-wHz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JG4-Ne-fbi" secondAttribute="trailing" id="jAM-E6-93t"/>
+                <constraint firstItem="JG4-Ne-fbi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oTc-ai-S0J"/>
+                <constraint firstItem="JG4-Ne-fbi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="zMz-bz-b1R"/>
+            </constraints>
+            <point key="canvasLocation" x="115.94202898550725" y="99.776785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

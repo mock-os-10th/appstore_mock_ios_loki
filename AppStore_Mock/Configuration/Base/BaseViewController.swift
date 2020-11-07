@@ -9,36 +9,38 @@ import UIKit
 import SnapKit
 
 class BaseViewController: UIViewController {
-    let accoutButton = UIButton()
+    let accoutButton: UIButton = {
+       let button = UIButton()
+        button.setImage(UIImage(systemName: "person.circle"), for: .normal)
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.imageView?.contentMode = .scaleToFill
+        button.clipsToBounds = true
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         
         setUpAccountButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         setUpAccountButton()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         dismissAccoutButton()
     }
     func setUpAccountButton() {
         guard let navigationBar = self.navigationController?.navigationBar else {
             return
         }
-        accoutButton.setImage(UIImage(systemName: "person.circle"), for: .normal)
-        accoutButton.tag = 1
         navigationBar.addSubview(accoutButton)
-
-        accoutButton.contentVerticalAlignment = .fill
-        accoutButton.contentHorizontalAlignment = .fill
-        accoutButton.imageView?.contentMode = .scaleToFill
-        accoutButton.clipsToBounds = true
         accoutButton.snp.makeConstraints { (make) in
             make.right.equalTo(navigationBar.snp.right).offset(-16)
             make.bottom.equalTo(navigationBar.snp.bottom).offset(-12)

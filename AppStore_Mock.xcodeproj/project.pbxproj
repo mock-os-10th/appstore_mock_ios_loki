@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		5683196118E8336B07F1E957 /* Pods_AppStore_Mock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D4F50E01F4295BC634075C /* Pods_AppStore_Mock.framework */; };
+		AF15A40E2557116B0074B59A /* AppDetailHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15A40C2557116B0074B59A /* AppDetailHeaderTableViewCell.swift */; };
+		AF15A40F2557116B0074B59A /* AppDetailHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF15A40D2557116B0074B59A /* AppDetailHeaderTableViewCell.xib */; };
+		AF15A416255735260074B59A /* AppUpdateInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15A415255735260074B59A /* AppUpdateInfoResponse.swift */; };
+		AF15A41A255737710074B59A /* AppDetailUpdateInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15A418255737710074B59A /* AppDetailUpdateInfoCell.swift */; };
+		AF15A41B255737710074B59A /* AppDetailUpdateInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF15A419255737710074B59A /* AppDetailUpdateInfoCell.xib */; };
+		AF15A41E25573B020074B59A /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15A41D25573B020074B59A /* Int.swift */; };
+		AF15A42225573C3F0074B59A /* AppVersionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15A42025573C3F0074B59A /* AppVersionDetailViewController.swift */; };
+		AF15A42325573C3F0074B59A /* AppVersionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF15A42125573C3F0074B59A /* AppVersionDetailViewController.xib */; };
+		AF15A42725573DAB0074B59A /* AppDetailUpdateInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15A42525573DAB0074B59A /* AppDetailUpdateInfoTableViewCell.swift */; };
+		AF15A42825573DAB0074B59A /* AppDetailUpdateInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF15A42625573DAB0074B59A /* AppDetailUpdateInfoTableViewCell.xib */; };
 		AF3137392553F6CB000B44CC /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3137372553F6CB000B44CC /* AppDetailViewController.swift */; };
 		AF31373A2553F6CB000B44CC /* AppDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF3137382553F6CB000B44CC /* AppDetailViewController.xib */; };
 		AF31373E25554DD5000B44CC /* AppDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31373D25554DD5000B44CC /* AppDetailResponse.swift */; };
@@ -80,6 +90,16 @@
 		383835258D7CB664C8E0CE21 /* Pods-AppStore_Mock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore_Mock.release.xcconfig"; path = "Target Support Files/Pods-AppStore_Mock/Pods-AppStore_Mock.release.xcconfig"; sourceTree = "<group>"; };
 		69D4F50E01F4295BC634075C /* Pods_AppStore_Mock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore_Mock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6BBC3CEBD8464AB6548666 /* Pods-AppStore_Mock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore_Mock.debug.xcconfig"; path = "Target Support Files/Pods-AppStore_Mock/Pods-AppStore_Mock.debug.xcconfig"; sourceTree = "<group>"; };
+		AF15A40C2557116B0074B59A /* AppDetailHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		AF15A40D2557116B0074B59A /* AppDetailHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		AF15A415255735260074B59A /* AppUpdateInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdateInfoResponse.swift; sourceTree = "<group>"; };
+		AF15A418255737710074B59A /* AppDetailUpdateInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailUpdateInfoCell.swift; sourceTree = "<group>"; };
+		AF15A419255737710074B59A /* AppDetailUpdateInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailUpdateInfoCell.xib; sourceTree = "<group>"; };
+		AF15A41D25573B020074B59A /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		AF15A42025573C3F0074B59A /* AppVersionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionDetailViewController.swift; sourceTree = "<group>"; };
+		AF15A42125573C3F0074B59A /* AppVersionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppVersionDetailViewController.xib; sourceTree = "<group>"; };
+		AF15A42525573DAB0074B59A /* AppDetailUpdateInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailUpdateInfoTableViewCell.swift; sourceTree = "<group>"; };
+		AF15A42625573DAB0074B59A /* AppDetailUpdateInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailUpdateInfoTableViewCell.xib; sourceTree = "<group>"; };
 		AF3137372553F6CB000B44CC /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
 		AF3137382553F6CB000B44CC /* AppDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailViewController.xib; sourceTree = "<group>"; };
 		AF31373D25554DD5000B44CC /* AppDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailResponse.swift; sourceTree = "<group>"; };
@@ -178,6 +198,8 @@
 				AF31373C25554DBA000B44CC /* Entity */,
 				AF3137372553F6CB000B44CC /* AppDetailViewController.swift */,
 				AF3137382553F6CB000B44CC /* AppDetailViewController.xib */,
+				AF15A42025573C3F0074B59A /* AppVersionDetailViewController.swift */,
+				AF15A42125573C3F0074B59A /* AppVersionDetailViewController.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -186,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				AF31373D25554DD5000B44CC /* AppDetailResponse.swift */,
+				AF15A415255735260074B59A /* AppUpdateInfoResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -260,6 +283,7 @@
 				AFA921C0254DC43600C640AC /* UIFont.swift */,
 				AFA921C1254DC43600C640AC /* Color.swift */,
 				AFD5FB74255036490037F87C /* UIImageView.swift */,
+				AF15A41D25573B020074B59A /* Int.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -408,6 +432,12 @@
 				AFE398D92555FFA10068114E /* AppDetailStackViewCell.swift */,
 				AFE398DA2555FFA10068114E /* AppDetailStackViewCell.xib */,
 				AFE398DE255695290068114E /* AppDetalInfoTableView.swift */,
+				AF15A40C2557116B0074B59A /* AppDetailHeaderTableViewCell.swift */,
+				AF15A40D2557116B0074B59A /* AppDetailHeaderTableViewCell.xib */,
+				AF15A418255737710074B59A /* AppDetailUpdateInfoCell.swift */,
+				AF15A419255737710074B59A /* AppDetailUpdateInfoCell.xib */,
+				AF15A42525573DAB0074B59A /* AppDetailUpdateInfoTableViewCell.swift */,
+				AF15A42625573DAB0074B59A /* AppDetailUpdateInfoTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -528,6 +558,8 @@
 				AFA9219E254DC33900C640AC /* Assets.xcassets in Resources */,
 				AFF911C8254FA38200C2A8DE /* AppSmallCell.xib in Resources */,
 				AFF911BF254F407300C2A8DE /* AppInsideLargeCell.xib in Resources */,
+				AF15A40F2557116B0074B59A /* AppDetailHeaderTableViewCell.xib in Resources */,
+				AF15A42825573DAB0074B59A /* AppDetailUpdateInfoTableViewCell.xib in Resources */,
 				AFCE47EA25556DDA0081E72E /* AppDetailInfoCell.xib in Resources */,
 				AFA5879B2551868000AC205E /* AppInsideRatingSmallCell.xib in Resources */,
 				AFF911BA254F3FE900C2A8DE /* AppLargeCell.xib in Resources */,
@@ -535,9 +567,11 @@
 				AF31373A2553F6CB000B44CC /* AppDetailViewController.xib in Resources */,
 				AFA9221C254EE6BB00C640AC /* ArcadeMainViewController.xib in Resources */,
 				AFA92212254EE66800C640AC /* GameMainViewController.xib in Resources */,
+				AF15A42325573C3F0074B59A /* AppVersionDetailViewController.xib in Resources */,
 				AFA92217254EE69900C640AC /* AppMainViewController.xib in Resources */,
 				AFA92221254EE6DA00C640AC /* SearchMainViewController.xib in Resources */,
 				AFA9223A254F184700C640AC /* SearchCell.xib in Resources */,
+				AF15A41B255737710074B59A /* AppDetailUpdateInfoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +634,7 @@
 				AFA921CE254DC43600C640AC /* Date.swift in Sources */,
 				AFA92230254F14F400C640AC /* BaseViewController.swift in Sources */,
 				AFA92197254DC33600C640AC /* SceneDelegate.swift in Sources */,
+				AF15A42225573C3F0074B59A /* AppVersionDetailViewController.swift in Sources */,
 				AFD5FB6E255035A20037F87C /* AppSmallResponse.swift in Sources */,
 				AFA921D4254DC43600C640AC /* Color.swift in Sources */,
 				AFCE4808255577870081E72E /* AppDetailInfoTableViewSmallCell.swift in Sources */,
@@ -611,6 +646,7 @@
 				AFA92239254F184700C640AC /* SearchCell.swift in Sources */,
 				AFE398DB2555FFA10068114E /* AppDetailStackViewCell.swift in Sources */,
 				AFD5FB9F255184CE0037F87C /* AppInsideRatingSmallCell.swift in Sources */,
+				AF15A416255735260074B59A /* AppUpdateInfoResponse.swift in Sources */,
 				AFA921CD254DC43600C640AC /* Device.swift in Sources */,
 				AFF911CC254FA83700C2A8DE /* AppInsideSmallCell.swift in Sources */,
 				AFA921CB254DC43600C640AC /* Constant.swift in Sources */,
@@ -627,9 +663,13 @@
 				AFF911D62550290800C2A8DE /* AppLargeResponse.swift in Sources */,
 				AFA921D3254DC43600C640AC /* UIFont.swift in Sources */,
 				AFA92216254EE69900C640AC /* AppMainViewController.swift in Sources */,
+				AF15A42725573DAB0074B59A /* AppDetailUpdateInfoTableViewCell.swift in Sources */,
 				AFA921CC254DC43600C640AC /* IndicatorView.swift in Sources */,
+				AF15A41A255737710074B59A /* AppDetailUpdateInfoCell.swift in Sources */,
 				AFA921D2254DC43600C640AC /* UINavigationBar.swift in Sources */,
+				AF15A41E25573B020074B59A /* Int.swift in Sources */,
 				AFA92211254EE66800C640AC /* GameMainViewController.swift in Sources */,
+				AF15A40E2557116B0074B59A /* AppDetailHeaderTableViewCell.swift in Sources */,
 				AFA9221B254EE6BB00C640AC /* ArcadeMainViewController.swift in Sources */,
 				AFA921D0254DC43600C640AC /* UIButton.swift in Sources */,
 			);

@@ -23,5 +23,23 @@ class AppDetailDataManager {
             }
         }
     }
+    
+    func getAppVersionsOfApplicationId(applicationId: Int, viewController: AppDetailViewController) {
+        let url = "\(Constant.BASEL_URL)/app/updateinfo" + "?appid=\(applicationId)"
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseDecodable(of: AppUpdateInfoResponse.self) { (response) in
+            switch response.result {
+            case .success(let response):
+                if response.isSuccess {
+                    viewController.didRetrieveAppUpdateInfo(result: response.result)
+                } else {
+                    viewController.failedToRequest(message: response.message)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+                viewController.failedToRequest(message: "서버와의 연결이 원활하지 않습니다.")
+            }
+        }
+        
+    }
 }
 
