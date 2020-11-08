@@ -9,7 +9,11 @@ import UIKit
 
 class AppSmallCell: UICollectionViewCell {
     var parentViewController: AppMainViewController?
-    var result: [AppSmallResult]?
+    var result: [AppSmallResult]? {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
     var isRatingResult: Bool = false
     var category: String? {
         didSet {

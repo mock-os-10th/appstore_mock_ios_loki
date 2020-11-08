@@ -6,27 +6,26 @@
 //
 
 struct AppLargeResponse: Decodable {
+    var result: [AppLargeResult]
     var isSuccess: Bool
     var code: Int
-    var result: [AppLargeResult]
-    init(isSuccess: Bool, code: Int, result: [AppLargeResult]) {
-        self.isSuccess = isSuccess
-        self.code = code
-        self.result = result
-    }
+    var LastCursor: Int
+    var message: String
 }
 
 struct AppLargeResult: Decodable {
-    var thumbnailUrl: String
-    var ApplicationID: Int
+    var ThumbnailUrl: String
+    var IconImage: String
+    var ApplicationId: Int
     var ApplicationName: String
+    var Price: Int
+    var InAppPurchase: String
     var Summary: String
     var Category: String
-    init(thumbnailUrl: String, ApplicationID: Int, ApplicationName: String, Summary: String, Category: String) {
-        self.thumbnailUrl = thumbnailUrl
-        self.ApplicationID = ApplicationID
-        self.ApplicationName = ApplicationName
-        self.Summary = Summary
-        self.Category = Category
-    }
+    var DetailInfo: String
+    var ImageSet: [ImageResult]
+}
+
+struct ImageResult: Decodable {
+    var AppImages: String
 }

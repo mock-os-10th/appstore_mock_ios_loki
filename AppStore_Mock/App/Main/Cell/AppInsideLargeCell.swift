@@ -16,7 +16,7 @@ class AppInsideLargeCell: UICollectionViewCell {
             appKeywordLabel.text = data.Category
             appNameLabel.text = data.ApplicationName
             appDetailLabel.text = data.Summary
-            appImage.setImage(url: data.thumbnailUrl)
+            appImage.setImage(url: data.ThumbnailUrl)
         }
     }
     

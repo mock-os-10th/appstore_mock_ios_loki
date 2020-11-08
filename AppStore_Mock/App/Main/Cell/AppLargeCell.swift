@@ -8,7 +8,11 @@
 import UIKit
 
 class AppLargeCell: UICollectionViewCell {
-    var result: [AppLargeResult]?
+    var result: [AppLargeResult]? {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -38,7 +42,7 @@ extension AppLargeCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
         return result?.count ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { 
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppInsideLargeCell", for: indexPath) as? AppInsideLargeCell, let result = result else {
             return UICollectionViewCell()
         }
