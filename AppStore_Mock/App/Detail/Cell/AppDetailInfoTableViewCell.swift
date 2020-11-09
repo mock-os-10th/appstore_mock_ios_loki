@@ -17,8 +17,8 @@ class AppDetailInfoTableViewCell: UITableViewCell {
         // Initialization code
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.register(UINib(nibName: "AppDetailInfoTableViewSmallCell", bundle: nil), forCellReuseIdentifier: "AppDetailInfoTableViewSmallCell")
-        self.tableView.register(UINib(nibName: "AppDetailInfoTableViewLargeCell", bundle: nil), forCellReuseIdentifier: "AppDetailInfoTableViewLargeCell")
+        self.tableView.register(UINib(nibName: "AppDetailInfoTableViewSmallCell", bundle: Bundle.main), forCellReuseIdentifier: "AppDetailInfoTableViewSmallCell")
+        self.tableView.register(UINib(nibName: "AppDetailInfoTableViewLargeCell", bundle: Bundle.main), forCellReuseIdentifier: "AppDetailInfoTableViewLargeCell")
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "default")
         self.tableView.allowsSelection = false
         self.tableView.estimatedRowHeight = 80

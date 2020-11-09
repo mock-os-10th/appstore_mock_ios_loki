@@ -25,8 +25,8 @@ class AppMainViewController: BaseViewController {
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        self.collectionView.register(UINib(nibName: "AppLargeCell", bundle: nil), forCellWithReuseIdentifier: "AppLargeCell")
-        self.collectionView.register(UINib(nibName: "AppSmallCell", bundle: nil), forCellWithReuseIdentifier: "AppSmallCell")
+        self.collectionView.register(UINib(nibName: "AppLargeCell", bundle: Bundle.main), forCellWithReuseIdentifier: "AppLargeCell")
+        self.collectionView.register(UINib(nibName: "AppSmallCell", bundle: Bundle.main), forCellWithReuseIdentifier: "AppSmallCell")
         self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "default")
         self.showIndicator()
         
@@ -91,6 +91,7 @@ extension AppMainViewController: UICollectionViewDelegate, UICollectionViewDataS
                 if let appLargeResponse = appLargeResponse {
                     cell.result = appLargeResponse.result
                 }
+                cell.parentViewController = self
                 return cell
             }
         } else {

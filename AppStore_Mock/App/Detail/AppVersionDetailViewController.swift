@@ -17,7 +17,7 @@ class AppVersionDetailViewController: UIViewController {
     init(_ appUpdateInfoResult: [AppUpdateInfoResult]?) {
         self.appUpdateInfoResult = appUpdateInfoResult
         
-        super.init(nibName: "AppVersionDetailViewController", bundle: nil)
+        super.init(nibName: "AppVersionDetailViewController", bundle: Bundle.main)
     }
     
     required init?(coder: NSCoder) {
@@ -32,7 +32,7 @@ class AppVersionDetailViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "default")
-        self.tableView.register(UINib(nibName: "AppDetailUpdateInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailUpdateInfoTableViewCell")
+        self.tableView.register(UINib(nibName: "AppDetailUpdateInfoTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "AppDetailUpdateInfoTableViewCell")
         self.tableView.allowsSelection = false
     }
     

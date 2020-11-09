@@ -20,14 +20,14 @@ class AppDetailInsideImageCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView! {
         didSet {
-            imageView.layer.cornerRadius = 16
-            imageView.layer.masksToBounds = true
+
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.layer.cornerRadius = 16
     }
 
 }

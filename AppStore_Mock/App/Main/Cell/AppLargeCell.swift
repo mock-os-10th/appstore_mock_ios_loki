@@ -8,6 +8,8 @@
 import UIKit
 
 class AppLargeCell: UICollectionViewCell {
+    var parentViewController: AppMainViewController?
+    
     var result: [AppLargeResult]? {
         didSet {
             self.collectionView.reloadData()
@@ -21,7 +23,7 @@ class AppLargeCell: UICollectionViewCell {
         // Initialization code
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UINib(nibName: "AppInsideLargeCell", bundle: nil), forCellWithReuseIdentifier: "AppInsideLargeCell")
+        collectionView.register(UINib(nibName: "AppInsideLargeCell", bundle: Bundle.main), forCellWithReuseIdentifier: "AppInsideLargeCell")
         
         let layout = SnappingCollectionViewLayout()
         layout.scrollDirection = .horizontal
@@ -55,5 +57,14 @@ extension AppLargeCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
         return CGSize(width: self.bounds.size.width - 30, height: 300)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let result = result, let parentViewController = parentViewController else {
+            return
+        }
+        
+        let appDetailViewController = AppDetailViewController(result[indexPath.row].ApplicationId)
+        
+        parentViewController.navigationController?.pushViewController(appDetailViewController, animated: true)
+    }
     
 }

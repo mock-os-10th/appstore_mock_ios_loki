@@ -20,7 +20,7 @@ class AppDetailImagesCell: UITableViewCell {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "AppDetailInsideImageCell", bundle: nil), forCellWithReuseIdentifier: "AppDetailInsideImageCell")
+        collectionView.register(UINib(nibName: "AppDetailInsideImageCell", bundle: Bundle.main), forCellWithReuseIdentifier: "AppDetailInsideImageCell")
         
         let layout = SnappingCollectionViewLayout()
         layout.scrollDirection = .horizontal
@@ -57,6 +57,4 @@ extension AppDetailImagesCell: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.bounds.size.width / 2 + 60, height: 400)
     }
-    
-    
 }

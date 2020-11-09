@@ -34,7 +34,7 @@ class AppDetailViewController: UIViewController {
     init(_ applicationId: Int) {
         self.applicationId = applicationId
         
-        super.init(nibName: "AppDetailViewController", bundle: nil)
+        super.init(nibName: "AppDetailViewController", bundle: Bundle.main)
     }
     
     required init?(coder: NSCoder) {
@@ -73,12 +73,12 @@ class AppDetailViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "default")
-        self.tableView.register(UINib(nibName: "AppDetailHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailHeaderTableViewCell")
-        self.tableView.register(UINib(nibName: "AppDetailStackViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailStackViewCell")
-        self.tableView.register(UINib(nibName: "AppDetailImagesCell", bundle: nil), forCellReuseIdentifier: "AppDetailImagesCell")
-        self.tableView.register(UINib(nibName: "AppDetailInfoCell", bundle: nil), forCellReuseIdentifier: "AppDetailInfoCell")
-        self.tableView.register(UINib(nibName: "AppDetailUpdateInfoCell", bundle: nil), forCellReuseIdentifier: "AppDetailUpdateInfoCell")
-        self.tableView.register(UINib(nibName: "AppDetailInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "AppDetailInfoTableViewCell")
+        self.tableView.register(UINib(nibName: "AppDetailHeaderTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "AppDetailHeaderTableViewCell")
+        self.tableView.register(UINib(nibName: "AppDetailStackViewCell", bundle: Bundle.main), forCellReuseIdentifier: "AppDetailStackViewCell")
+        self.tableView.register(UINib(nibName: "AppDetailImagesCell", bundle: Bundle.main), forCellReuseIdentifier: "AppDetailImagesCell")
+        self.tableView.register(UINib(nibName: "AppDetailInfoCell", bundle: Bundle.main), forCellReuseIdentifier: "AppDetailInfoCell")
+        self.tableView.register(UINib(nibName: "AppDetailUpdateInfoCell", bundle: Bundle.main), forCellReuseIdentifier: "AppDetailUpdateInfoCell")
+        self.tableView.register(UINib(nibName: "AppDetailInfoTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "AppDetailInfoTableViewCell")
         self.tableView.allowsSelection = false
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableView.automaticDimension

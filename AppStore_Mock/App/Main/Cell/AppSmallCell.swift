@@ -33,8 +33,8 @@ class AppSmallCell: UICollectionViewCell {
         // Initialization code
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "AppInsideSmallCell", bundle: nil), forCellWithReuseIdentifier: "AppInsideSmallCell")
-        collectionView.register(UINib(nibName: "AppInsideRatingSmallCell", bundle: nil), forCellWithReuseIdentifier: "AppInsideRatingSmallCell")
+        collectionView.register(UINib(nibName: "AppInsideSmallCell", bundle: Bundle.main), forCellWithReuseIdentifier: "AppInsideSmallCell")
+        collectionView.register(UINib(nibName: "AppInsideRatingSmallCell", bundle: Bundle.main), forCellWithReuseIdentifier: "AppInsideRatingSmallCell")
         let layout = SnappingCollectionViewLayout()
         layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout

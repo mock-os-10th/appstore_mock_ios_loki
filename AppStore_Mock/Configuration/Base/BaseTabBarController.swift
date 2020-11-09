@@ -23,19 +23,18 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let todayNetworkController = UINavigationController(rootViewController: todayViewController)
         let gameNetworkController = UINavigationController(rootViewController: gameViewController)
         let appNetworkController = UINavigationController(rootViewController: appViewController)
         let arcadeNetworkController = UINavigationController(rootViewController: arcadeViewController)
         let searchNetworkController = UINavigationController(rootViewController: searchViewController)
         
-        todayNetworkController.tabBarItem = todayTabBarItem
+        todayViewController.tabBarItem = todayTabBarItem
         gameNetworkController.tabBarItem = gameTabBarItem
         appNetworkController.tabBarItem = appTabBarItem
         arcadeNetworkController.tabBarItem = arcadeTabBarItem
         searchNetworkController.tabBarItem = searchTabBarItem
         
-        self.viewControllers = [todayNetworkController, gameNetworkController, appNetworkController, arcadeNetworkController, searchNetworkController]
+        self.viewControllers = [todayViewController, gameNetworkController, appNetworkController, arcadeNetworkController, searchNetworkController]
         
         self.delegate = self
         self.selectedIndex = 4

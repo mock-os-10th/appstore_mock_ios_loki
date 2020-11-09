@@ -25,6 +25,12 @@
 		AF3137432555650E000B44CC /* AppDetailImagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF3137412555650D000B44CC /* AppDetailImagesCell.xib */; };
 		AF313747255565B8000B44CC /* AppDetailInsideImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF313745255565B8000B44CC /* AppDetailInsideImageCell.swift */; };
 		AF313748255565B8000B44CC /* AppDetailInsideImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF313746255565B8000B44CC /* AppDetailInsideImageCell.xib */; };
+		AF6C1AC325598D2200D18B07 /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C1AC125598D2200D18B07 /* TodayCollectionViewCell.swift */; };
+		AF6C1AC425598D2200D18B07 /* TodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6C1AC225598D2200D18B07 /* TodayCollectionViewCell.xib */; };
+		AF6C1AC9255996FE00D18B07 /* TodayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C1AC8255996FE00D18B07 /* TodayResponse.swift */; };
+		AF6C1ACE2559975600D18B07 /* TodayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C1ACD2559975600D18B07 /* TodayDataManager.swift */; };
+		AF6C1AD42559B07B00D18B07 /* TodayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C1AD22559B07B00D18B07 /* TodayDetailViewController.swift */; };
+		AF6C1AD52559B07B00D18B07 /* TodayDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6C1AD32559B07B00D18B07 /* TodayDetailViewController.xib */; };
 		AFA5879B2551868000AC205E /* AppInsideRatingSmallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFD5FB96255184780037F87C /* AppInsideRatingSmallCell.xib */; };
 		AFA92195254DC33600C640AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA92194254DC33600C640AC /* AppDelegate.swift */; };
 		AFA92197254DC33600C640AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA92196254DC33600C640AC /* SceneDelegate.swift */; };
@@ -107,6 +113,12 @@
 		AF3137412555650D000B44CC /* AppDetailImagesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailImagesCell.xib; sourceTree = "<group>"; };
 		AF313745255565B8000B44CC /* AppDetailInsideImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailInsideImageCell.swift; sourceTree = "<group>"; };
 		AF313746255565B8000B44CC /* AppDetailInsideImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailInsideImageCell.xib; sourceTree = "<group>"; };
+		AF6C1AC125598D2200D18B07 /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF6C1AC225598D2200D18B07 /* TodayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayCollectionViewCell.xib; sourceTree = "<group>"; };
+		AF6C1AC8255996FE00D18B07 /* TodayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayResponse.swift; sourceTree = "<group>"; };
+		AF6C1ACD2559975600D18B07 /* TodayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDataManager.swift; sourceTree = "<group>"; };
+		AF6C1AD22559B07B00D18B07 /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
+		AF6C1AD32559B07B00D18B07 /* TodayDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayDetailViewController.xib; sourceTree = "<group>"; };
 		AFA92191254DC33600C640AC /* AppStore_Mock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore_Mock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA92194254DC33600C640AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA92196254DC33600C640AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +225,40 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		AF6C1AC025598D1000D18B07 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AF6C1AC125598D2200D18B07 /* TodayCollectionViewCell.swift */,
+				AF6C1AC225598D2200D18B07 /* TodayCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		AF6C1AC7255996E300D18B07 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				AF6C1AC8255996FE00D18B07 /* TodayResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AF6C1ACC2559974800D18B07 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				AF6C1ACD2559975600D18B07 /* TodayDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		AF6C1AD12559B05F00D18B07 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				AF6C1AD22559B07B00D18B07 /* TodayDetailViewController.swift */,
+				AF6C1AD32559B07B00D18B07 /* TodayDetailViewController.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		AFA92188254DC33600C640AC = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +354,7 @@
 		AFA921FF254EE53400C640AC /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				AF6C1AD12559B05F00D18B07 /* Detail */,
 				AFA92204254EE5B500C640AC /* Main */,
 			);
 			path = Today;
@@ -349,6 +396,9 @@
 		AFA92204254EE5B500C640AC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AF6C1ACC2559974800D18B07 /* DataManager */,
+				AF6C1AC7255996E300D18B07 /* Entity */,
+				AF6C1AC025598D1000D18B07 /* Cell */,
 				AFA92229254EE78E00C640AC /* TodayMainViewController.swift */,
 				AFA9222A254EE78E00C640AC /* TodayMainViewController.xib */,
 			);
@@ -557,11 +607,13 @@
 				AFA921D7254DC43600C640AC /* NotoSansCJKkr-Regular.otf in Resources */,
 				AFA9219E254DC33900C640AC /* Assets.xcassets in Resources */,
 				AFF911C8254FA38200C2A8DE /* AppSmallCell.xib in Resources */,
+				AF6C1AD52559B07B00D18B07 /* TodayDetailViewController.xib in Resources */,
 				AFF911BF254F407300C2A8DE /* AppInsideLargeCell.xib in Resources */,
 				AF15A40F2557116B0074B59A /* AppDetailHeaderTableViewCell.xib in Resources */,
 				AF15A42825573DAB0074B59A /* AppDetailUpdateInfoTableViewCell.xib in Resources */,
 				AFCE47EA25556DDA0081E72E /* AppDetailInfoCell.xib in Resources */,
 				AFA5879B2551868000AC205E /* AppInsideRatingSmallCell.xib in Resources */,
+				AF6C1AC425598D2200D18B07 /* TodayCollectionViewCell.xib in Resources */,
 				AFF911BA254F3FE900C2A8DE /* AppLargeCell.xib in Resources */,
 				AFA921D6254DC43600C640AC /* NotoSansCJKkr-Medium.otf in Resources */,
 				AF31373A2553F6CB000B44CC /* AppDetailViewController.xib in Resources */,
@@ -626,7 +678,9 @@
 			files = (
 				AFA92199254DC33600C640AC /* ViewController.swift in Sources */,
 				AFCE480D255578400081E72E /* AppDetailInfoTableViewLargeCell.swift in Sources */,
+				AF6C1AC9255996FE00D18B07 /* TodayResponse.swift in Sources */,
 				AFE398DF255695290068114E /* AppDetalInfoTableView.swift in Sources */,
+				AF6C1ACE2559975600D18B07 /* TodayDataManager.swift in Sources */,
 				AFA92195254DC33600C640AC /* AppDelegate.swift in Sources */,
 				AFA92226254EE74600C640AC /* BaseTabBarController.swift in Sources */,
 				AFA9222B254EE78E00C640AC /* TodayMainViewController.swift in Sources */,
@@ -657,7 +711,9 @@
 				AFCE4803255575500081E72E /* AppDetailInfoTableViewCell.swift in Sources */,
 				AFD5FB9225515E430037F87C /* AppDataManager.swift in Sources */,
 				AFF911C7254FA38200C2A8DE /* AppSmallCell.swift in Sources */,
+				AF6C1AC325598D2200D18B07 /* TodayCollectionViewCell.swift in Sources */,
 				AFA921CF254DC43600C640AC /* String.swift in Sources */,
+				AF6C1AD42559B07B00D18B07 /* TodayDetailViewController.swift in Sources */,
 				AFD5FB83255060E50037F87C /* SnappingCollectionViewLayout.swift in Sources */,
 				AF31373E25554DD5000B44CC /* AppDetailResponse.swift in Sources */,
 				AFF911D62550290800C2A8DE /* AppLargeResponse.swift in Sources */,
