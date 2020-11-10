@@ -29,8 +29,12 @@
 		AF6C1AC425598D2200D18B07 /* TodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6C1AC225598D2200D18B07 /* TodayCollectionViewCell.xib */; };
 		AF6C1AC9255996FE00D18B07 /* TodayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C1AC8255996FE00D18B07 /* TodayResponse.swift */; };
 		AF6C1ACE2559975600D18B07 /* TodayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C1ACD2559975600D18B07 /* TodayDataManager.swift */; };
-		AF6C1AD42559B07B00D18B07 /* TodayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C1AD22559B07B00D18B07 /* TodayDetailViewController.swift */; };
-		AF6C1AD52559B07B00D18B07 /* TodayDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6C1AD32559B07B00D18B07 /* TodayDetailViewController.xib */; };
+		AF6C1ADC2559E23A00D18B07 /* TodayDetailImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C1ADA2559E23A00D18B07 /* TodayDetailImageCollectionViewCell.swift */; };
+		AF6C1ADD2559E23A00D18B07 /* TodayDetailImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6C1ADB2559E23A00D18B07 /* TodayDetailImageCollectionViewCell.xib */; };
+		AF6C1AEA2559EE4A00D18B07 /* TodayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C1AE82559EE4A00D18B07 /* TodayDetailViewController.swift */; };
+		AF6C1AEB2559EE4A00D18B07 /* TodayDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6C1AE92559EE4A00D18B07 /* TodayDetailViewController.xib */; };
+		AF6C1B1F255A9F8E00D18B07 /* TodayHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C1B1D255A9F8E00D18B07 /* TodayHeaderView.swift */; };
+		AF6C1B20255A9F8E00D18B07 /* TodayHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6C1B1E255A9F8E00D18B07 /* TodayHeaderView.xib */; };
 		AFA5879B2551868000AC205E /* AppInsideRatingSmallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFD5FB96255184780037F87C /* AppInsideRatingSmallCell.xib */; };
 		AFA92195254DC33600C640AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA92194254DC33600C640AC /* AppDelegate.swift */; };
 		AFA92197254DC33600C640AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA92196254DC33600C640AC /* SceneDelegate.swift */; };
@@ -117,8 +121,12 @@
 		AF6C1AC225598D2200D18B07 /* TodayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayCollectionViewCell.xib; sourceTree = "<group>"; };
 		AF6C1AC8255996FE00D18B07 /* TodayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayResponse.swift; sourceTree = "<group>"; };
 		AF6C1ACD2559975600D18B07 /* TodayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDataManager.swift; sourceTree = "<group>"; };
-		AF6C1AD22559B07B00D18B07 /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
-		AF6C1AD32559B07B00D18B07 /* TodayDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayDetailViewController.xib; sourceTree = "<group>"; };
+		AF6C1ADA2559E23A00D18B07 /* TodayDetailImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF6C1ADB2559E23A00D18B07 /* TodayDetailImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayDetailImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		AF6C1AE82559EE4A00D18B07 /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
+		AF6C1AE92559EE4A00D18B07 /* TodayDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayDetailViewController.xib; sourceTree = "<group>"; };
+		AF6C1B1D255A9F8E00D18B07 /* TodayHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHeaderView.swift; sourceTree = "<group>"; };
+		AF6C1B1E255A9F8E00D18B07 /* TodayHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayHeaderView.xib; sourceTree = "<group>"; };
 		AFA92191254DC33600C640AC /* AppStore_Mock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore_Mock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA92194254DC33600C640AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA92196254DC33600C640AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +236,8 @@
 		AF6C1AC025598D1000D18B07 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				AF6C1B1D255A9F8E00D18B07 /* TodayHeaderView.swift */,
+				AF6C1B1E255A9F8E00D18B07 /* TodayHeaderView.xib */,
 				AF6C1AC125598D2200D18B07 /* TodayCollectionViewCell.swift */,
 				AF6C1AC225598D2200D18B07 /* TodayCollectionViewCell.xib */,
 			);
@@ -253,10 +263,20 @@
 		AF6C1AD12559B05F00D18B07 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				AF6C1AD22559B07B00D18B07 /* TodayDetailViewController.swift */,
-				AF6C1AD32559B07B00D18B07 /* TodayDetailViewController.xib */,
+				AF6C1AD82559E20900D18B07 /* Cell */,
+				AF6C1AE82559EE4A00D18B07 /* TodayDetailViewController.swift */,
+				AF6C1AE92559EE4A00D18B07 /* TodayDetailViewController.xib */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		AF6C1AD82559E20900D18B07 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AF6C1ADA2559E23A00D18B07 /* TodayDetailImageCollectionViewCell.swift */,
+				AF6C1ADB2559E23A00D18B07 /* TodayDetailImageCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		AFA92188254DC33600C640AC = {
@@ -601,13 +621,15 @@
 				AF3137432555650E000B44CC /* AppDetailImagesCell.xib in Resources */,
 				AFA9222C254EE78E00C640AC /* TodayMainViewController.xib in Resources */,
 				AFCE4804255575500081E72E /* AppDetailInfoTableViewCell.xib in Resources */,
+				AF6C1ADD2559E23A00D18B07 /* TodayDetailImageCollectionViewCell.xib in Resources */,
 				AFCE4809255577870081E72E /* AppDetailInfoTableViewSmallCell.xib in Resources */,
+				AF6C1B20255A9F8E00D18B07 /* TodayHeaderView.xib in Resources */,
 				AFE398DC2555FFA10068114E /* AppDetailStackViewCell.xib in Resources */,
 				AFA921D8254DC43600C640AC /* NotoSansCJKkr-Bold.otf in Resources */,
 				AFA921D7254DC43600C640AC /* NotoSansCJKkr-Regular.otf in Resources */,
+				AF6C1AEB2559EE4A00D18B07 /* TodayDetailViewController.xib in Resources */,
 				AFA9219E254DC33900C640AC /* Assets.xcassets in Resources */,
 				AFF911C8254FA38200C2A8DE /* AppSmallCell.xib in Resources */,
-				AF6C1AD52559B07B00D18B07 /* TodayDetailViewController.xib in Resources */,
 				AFF911BF254F407300C2A8DE /* AppInsideLargeCell.xib in Resources */,
 				AF15A40F2557116B0074B59A /* AppDetailHeaderTableViewCell.xib in Resources */,
 				AF15A42825573DAB0074B59A /* AppDetailUpdateInfoTableViewCell.xib in Resources */,
@@ -681,6 +703,7 @@
 				AF6C1AC9255996FE00D18B07 /* TodayResponse.swift in Sources */,
 				AFE398DF255695290068114E /* AppDetalInfoTableView.swift in Sources */,
 				AF6C1ACE2559975600D18B07 /* TodayDataManager.swift in Sources */,
+				AF6C1B1F255A9F8E00D18B07 /* TodayHeaderView.swift in Sources */,
 				AFA92195254DC33600C640AC /* AppDelegate.swift in Sources */,
 				AFA92226254EE74600C640AC /* BaseTabBarController.swift in Sources */,
 				AFA9222B254EE78E00C640AC /* TodayMainViewController.swift in Sources */,
@@ -713,9 +736,9 @@
 				AFF911C7254FA38200C2A8DE /* AppSmallCell.swift in Sources */,
 				AF6C1AC325598D2200D18B07 /* TodayCollectionViewCell.swift in Sources */,
 				AFA921CF254DC43600C640AC /* String.swift in Sources */,
-				AF6C1AD42559B07B00D18B07 /* TodayDetailViewController.swift in Sources */,
 				AFD5FB83255060E50037F87C /* SnappingCollectionViewLayout.swift in Sources */,
 				AF31373E25554DD5000B44CC /* AppDetailResponse.swift in Sources */,
+				AF6C1AEA2559EE4A00D18B07 /* TodayDetailViewController.swift in Sources */,
 				AFF911D62550290800C2A8DE /* AppLargeResponse.swift in Sources */,
 				AFA921D3254DC43600C640AC /* UIFont.swift in Sources */,
 				AFA92216254EE69900C640AC /* AppMainViewController.swift in Sources */,
@@ -723,6 +746,7 @@
 				AFA921CC254DC43600C640AC /* IndicatorView.swift in Sources */,
 				AF15A41A255737710074B59A /* AppDetailUpdateInfoCell.swift in Sources */,
 				AFA921D2254DC43600C640AC /* UINavigationBar.swift in Sources */,
+				AF6C1ADC2559E23A00D18B07 /* TodayDetailImageCollectionViewCell.swift in Sources */,
 				AF15A41E25573B020074B59A /* Int.swift in Sources */,
 				AFA92211254EE66800C640AC /* GameMainViewController.swift in Sources */,
 				AF15A40E2557116B0074B59A /* AppDetailHeaderTableViewCell.swift in Sources */,

@@ -33,7 +33,6 @@ class BaseViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.prefersLargeTitles = false
         dismissAccoutButton()
     }
     func setUpAccountButton() {
@@ -44,7 +43,7 @@ class BaseViewController: UIViewController {
         accoutButton.snp.makeConstraints { (make) in
             make.right.equalTo(navigationBar.snp.right).offset(-16)
             make.bottom.equalTo(navigationBar.snp.bottom).offset(-12)
-            make.height.width.equalTo(35)
+            make.height.width.equalTo(34)
         }
     }
     

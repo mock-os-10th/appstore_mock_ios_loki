@@ -26,6 +26,13 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    var currentDay: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko")
+        dateFormatter.dateFormat = "MM월 dd일 EEEE"
+        return dateFormatter.string(from: self)
+    }
+    
     // MARK: 이미지 파일을 저장할 때 마땅한 이름이 없는 경우 현재 일시를 파일 이름으로 사용하기도 합니다.
 //    var fileName: String {
 //        let dateFormatter = DateFormatter()

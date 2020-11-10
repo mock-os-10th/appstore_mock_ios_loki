@@ -8,7 +8,7 @@
 import UIKit
 import AppstoreTransition
 
-class TodayMainViewController: UIViewController {
+class TodayMainViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var transition: CardTransition?
@@ -18,14 +18,16 @@ class TodayMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.title = "투데이"
+        
         self.view.backgroundColor = UIColor.todayBackgroundColor
         collectionView.backgroundColor = UIColor.todayBackgroundColor
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "TodayCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "TodayCollectionViewCell")
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "default")
+        collectionView.register(UINib(nibName: "TodayHeaderView", bundle: Bundle.main), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TodayHeaderView")
         
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             let height = UIScreen.main.bounds.height / 2 + 80
@@ -37,7 +39,7 @@ class TodayMainViewController: UIViewController {
         self.showIndicator()
         TodayDataManager.shared.getAdvertisements(viewController: self)
     }
-
+    
 
     /*
     // MARK: - Navigation
@@ -62,9 +64,13 @@ extension TodayMainViewController {
         self.dismissIndicator()
         self.presentAlert(title: message)
     }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    }
+    
 }
 
-extension TodayMainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension TodayMainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return todayResults.count
     }
@@ -92,10 +98,34 @@ extension TodayMainViewController: UICollectionViewDelegate, UICollectionViewDat
         
         todayDetailViewController.modalPresentationStyle = .custom
         
-        presentExpansion(todayDetailViewController, cell: cell, animated: true)
+        let todayDetailNavigationController = UINavigationController(rootViewController: todayDetailViewController)
+        todayDetailNavigationController.modalPresentationStyle = .custom
+        
+        presentExpansion(todayDetailNavigationController, cell: cell, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TodayHeaderView", for: indexPath) as! TodayHeaderView
+            headerView.accountButton.setImage(UIImage(systemName: "person.circle"), for: .normal)
+            headerView.dayLabel.text = Date().currentDay
+            
+            return headerView
+        default:
+            break
+        }
+        
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 100)
     }
 }
 
 extension TodayMainViewController: CardsViewController {
     
 }
+
+
