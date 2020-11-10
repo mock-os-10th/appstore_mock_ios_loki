@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchMainViewController" customModule="AppStore_Mock" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="xwg-I1-q1I" id="Q8m-Th-PWs"/>
+                <outlet property="tableView" destination="adD-hS-8hs" id="l79-66-yrz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,24 +20,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xwg-I1-q1I">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="adD-hS-8hs">
                     <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AI8-Ik-n8M">
-                        <size key="itemSize" width="414" height="350"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="xwg-I1-q1I" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="BSO-bj-dRC"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xwg-I1-q1I" secondAttribute="trailing" id="ZZK-ZI-tuk"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xwg-I1-q1I" secondAttribute="bottom" id="rpD-mH-88g"/>
-                <constraint firstItem="xwg-I1-q1I" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vdW-dY-oZc"/>
+                <constraint firstItem="adD-hS-8hs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Gfr-VP-0Nv"/>
+                <constraint firstItem="adD-hS-8hs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ti9-c6-cBw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="adD-hS-8hs" secondAttribute="trailing" id="duQ-cd-Lw8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="adD-hS-8hs" secondAttribute="bottom" id="qtE-QR-HH7"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
