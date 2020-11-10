@@ -11,13 +11,23 @@ class SearchDataManager {
     static let shared =  SearchDataManager()
     
     func getSearchResults(searchKeyword: String, viewController: SearchMainViewController) {
-        let url = "\(Constant.BASEL_URL)/apps/searchword" + "?word=\(searchKeyword)"
+        let original = "\(Constant.BASEL_URL)/apps/searchword" + "?word=\(searchKeyword)"
+        
+        guard let target = original.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            // 인코딩중 에러가 발생함
+            return
+        }
+
+        guard let url = URL(string: target) else {
+            // URL로 만들다가 에러가 발생함
+            return
+        }
         
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseDecodable(of: SearchResponse.self) { (response) in
             switch response.result {
             case .success(let response):
-                if response.isSuccess {
-                    viewController.didRetrieveSearchResults(result: response.result)
+                if response.isSuccess, let result = response.result {
+                    viewController.didRetrieveSearchResults(result: result)
                 } else {
                     viewController.failedToSearchRequest(message: response.message)
                 }

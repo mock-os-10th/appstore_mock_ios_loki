@@ -20,7 +20,8 @@ class TodayDetailViewController: UIViewController {
     @IBOutlet weak var appSummaryLabel: UILabel!
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var inAppPurchaseLabel: UILabel!
-    lazy var closeButton: UIButton = {
+    
+    let closeButton: UIButton = {
         let button = UIButton(type: UIButton.ButtonType.custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(closeDetailViewController), for: .touchUpInside)

@@ -9,7 +9,7 @@ struct SearchResponse: Decodable {
     var isSuccess: Bool
     var code: Int
     var message: String
-    var result: [SearchResult]
+    var result: [SearchResult]?
 }
 
 struct SearchResult: Decodable {

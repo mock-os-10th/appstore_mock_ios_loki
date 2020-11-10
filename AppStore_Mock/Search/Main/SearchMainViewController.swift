@@ -135,6 +135,7 @@ extension SearchMainViewController: UISearchResultsUpdating {
 
 extension SearchMainViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchResults.removeAll()
         searchBar.resignFirstResponder()
         print("search button clicked")
         self.showIndicator()
