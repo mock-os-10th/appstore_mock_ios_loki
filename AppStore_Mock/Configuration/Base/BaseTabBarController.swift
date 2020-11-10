@@ -14,11 +14,11 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     let arcadeViewController = ArcadeMainViewController()
     let searchViewController = SearchMainViewController()
     
-    let todayTabBarItem = UITabBarItem(title: "투데이", image: nil, tag: 0)
-    let gameTabBarItem = UITabBarItem(title: "게임", image: nil, tag: 1)
-    let appTabBarItem = UITabBarItem(title: "앱", image: nil, tag: 2)
-    let arcadeTabBarItem = UITabBarItem(title: "아케이드", image: nil, tag: 3)
-    let searchTabBarItem = UITabBarItem(title: "검색", image: nil, tag: 4)
+    let todayTabBarItem = UITabBarItem(title: "투데이", image: UIImage(named: "tabbar_today"), tag: 0)
+    let gameTabBarItem = UITabBarItem(title: "게임", image: UIImage(named: "tabbar_games"), tag: 1)
+    let appTabBarItem = UITabBarItem(title: "앱", image: UIImage(named: "tabbar_apps"), tag: 2)
+    let arcadeTabBarItem = UITabBarItem(title: "아케이드", image: UIImage(named: "tabbar_arcade"), tag: 3)
+    let searchTabBarItem = UITabBarItem(title: "검색", image: UIImage(named: "tabbar_search"), tag: 4)
     
     override func viewDidLoad() {
         super.viewDidLoad()

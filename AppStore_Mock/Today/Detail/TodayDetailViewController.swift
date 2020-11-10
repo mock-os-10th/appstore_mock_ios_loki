@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AppstoreTransition
 
 class TodayDetailViewController: UIViewController {
     @IBOutlet weak var contentScrollView: UIScrollView!
@@ -21,6 +20,13 @@ class TodayDetailViewController: UIViewController {
     @IBOutlet weak var appSummaryLabel: UILabel!
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var inAppPurchaseLabel: UILabel!
+    lazy var closeButton: UIButton = {
+        let button = UIButton(type: UIButton.ButtonType.custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(closeDetailViewController), for: .touchUpInside)
+        button.setImage(UIImage(named: "darkOnLight"), for: .normal)
+        return button
+    }()
     
     var result: TodayResult?
     
@@ -40,14 +46,21 @@ class TodayDetailViewController: UIViewController {
         
         view.clipsToBounds = true
         contentScrollView.delegate = self
-        scrollView.contentInsetAdjustmentBehavior = .never
         
         self.appIconImageView.layer.cornerRadius = 8
         self.appIconImageView.clipsToBounds = true
         
         self.downloadButton.layer.cornerRadius = 16
         self.downloadButton.clipsToBounds = true
-    
+        
+        
+        view.addSubview(closeButton)
+        NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            closeButton.widthAnchor.constraint(equalToConstant: 30.0),
+            closeButton.heightAnchor.constraint(equalTo: closeButton.widthAnchor, multiplier: 1.0),
+            closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20.0)
+        ])
         
         if let result = result {
             headerImageView.setImage(url: result.ThumbnailUrl)
@@ -68,7 +81,7 @@ class TodayDetailViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(pushToAppDetailViewController))
         self.appView.addGestureRecognizer(gesture)
         
-        let _ = dismissHandler
+
         
         headerViewHeightConstraint.constant = UIScreen.main.bounds.width * 1.272 - 10
         
@@ -84,6 +97,8 @@ class TodayDetailViewController: UIViewController {
         self.imageCollectionView.contentInset = .init(top: 0, left: 8, bottom: 0, right: 8)
         
         self.imageCollectionView.reloadData()
+        print(closeButton.layer.zPosition)
+        print(imageCollectionView.layer.zPosition)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,27 +128,30 @@ extension TodayDetailViewController {
             return
         }
         let appDetailViewController = AppDetailViewController(result.ApplicationId)
+
         self.navigationController?.pushViewController(appDetailViewController, animated: true)
+    }
+    
+    @objc func closeDetailViewController() {
+        dismiss(animated: true, completion: nil)
     }
 }
 
 extension TodayDetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollView.bounces = scrollView.contentOffset.y > 100
+        let yPositionForDismissal: CGFloat = 20.0
+        var yContentOffset = scrollView.contentOffset.y
+        let topPadding = UIWindow.topPadding
         
-        dismissHandler.scrollViewDidScroll(scrollView)
+        yContentOffset += topPadding
+        
+        if yPositionForDismissal + yContentOffset <= 0 && scrollView.isTracking {
+            self.closeDetailViewController()
+        }
+        
     }
 }
 
-extension TodayDetailViewController: CardDetailViewController {
-    var cardContentView: UIView {
-        return headerView
-    }
-    
-    var scrollView: UIScrollView {
-        return contentScrollView
-    }
-}
 
 extension TodayDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -6,12 +6,10 @@
 //
 
 import UIKit
-import AppstoreTransition
 
 class TodayMainViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var transition: CardTransition?
     
     var todayResults = [TodayResult]()
     
@@ -88,20 +86,12 @@ extension TodayMainViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let todayDetailViewController = TodayDetailViewController(todayResults[indexPath.row])
         
-        let cell = collectionView.cellForItem(at: indexPath) as! TodayCollectionViewCell
-        cell.settings.cardContainerInsets = UIEdgeInsets(top: 8.0, left: 16.0, bottom: 8.0, right: 16.0)
-        cell.settings.isEnabledBottomClose = false
-            
-        transition = CardTransition(cell: cell, settings: cell.settings)
-        todayDetailViewController.settings = cell.settings
-        todayDetailViewController.transitioningDelegate = transition
-        
-        todayDetailViewController.modalPresentationStyle = .custom
-        
         let todayDetailNavigationController = UINavigationController(rootViewController: todayDetailViewController)
+    
+        
         todayDetailNavigationController.modalPresentationStyle = .custom
         
-        presentExpansion(todayDetailNavigationController, cell: cell, animated: true)
+        self.present(todayDetailNavigationController, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -122,10 +112,6 @@ extension TodayMainViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 100)
     }
-}
-
-extension TodayMainViewController: CardsViewController {
-    
 }
 
 

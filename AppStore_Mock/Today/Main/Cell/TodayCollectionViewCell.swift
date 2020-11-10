@@ -20,30 +20,5 @@ class TodayCollectionViewCell: UICollectionViewCell {
         containerView.clipsToBounds = true
     }
     
-    // Make it appears very responsive to touch
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        animate(isHighlighted: true)
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        animate(isHighlighted: false)
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesCancelled(touches, with: event)
-        animate(isHighlighted: false)
-    }
-    
-}
-
-extension TodayCollectionViewCell: CardCollectionViewCell {
-    
-    var cardContentView: UIView {
-        get {
-            return containerView
-        }
-    }
     
 }
