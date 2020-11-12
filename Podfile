@@ -9,5 +9,7 @@ target 'AppStore_Mock' do
   pod 'Alamofire'
   pod 'AlamofireNetworkActivityIndicator'
   pod 'SnapKit'
-  pod 'appstore-card-transition'
+  pod 'SwiftKeychainWrapper'
+  pod 'KakaoSDK'
+  pod 'SemiModalViewController'
 end

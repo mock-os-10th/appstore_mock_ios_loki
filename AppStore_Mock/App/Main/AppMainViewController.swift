@@ -31,13 +31,17 @@ class AppMainViewController: BaseViewController {
         self.showIndicator()
         
         AppDataManager.shared.getAdvertisements(viewController: self)
-        AppDataManager.shared.getAppList(targetList: "popularity", viewController: self)
-        AppDataManager.shared.getAppList(targetList: "newupdate", viewController: self)
-        AppDataManager.shared.getAppList(targetList: "popularityfinance", viewController: self)
+        AppDataManager.shared.getAppList(targetList: "popularity", pageNum: 1, viewController: self)
+        AppDataManager.shared.getAppList(targetList: "newupdate", pageNum: 1, viewController: self)
+        AppDataManager.shared.getAppList(targetList: "popularityfinance", pageNum: 1, viewController: self)
         
 //        AppDataManager().getAppList(targetList: "popularity", viewController: self)
 //        AppDataManager().getAppList(targetList: "newupdate", viewController: self)
 //        AppDataManager().getAppList(targetList: "popularityfinance", viewController: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.collectionView.reloadData()
     }
 
 
@@ -70,9 +74,6 @@ extension AppMainViewController {
         self.presentAlert(title: message)
     }
     
-    @objc func openAccountViewController() {
-        self.presentAlert(title: "아직 구현되지 않은 부분입니다.")
-    }
 }
 
 extension AppMainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -108,7 +109,9 @@ extension AppMainViewController: UICollectionViewDelegate, UICollectionViewDataS
                     break
                 }
                 cell.parentViewController = self
-                cell.result = appSmallResponses[indexPath.row - 1].result
+                if let result = appSmallResponses[indexPath.row - 1].result {
+                    cell.result = result
+                }
                 
                 return cell
             }

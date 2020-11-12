@@ -101,4 +101,22 @@ extension UIViewController {
     @objc func dismissIndicator() {
         IndicatorView.shared.dismiss()
     }
+    
+    @objc func openAccountViewController() {
+        if let baseVC = self as? BaseViewController {
+            print("베이스?")
+            let accountMainViewController = AccountMainViewController(baseVC: baseVC)
+            let accountNavigationController = UINavigationController(rootViewController: accountMainViewController)
+            present(accountNavigationController, animated: true, completion: nil)
+        } else if let todayVC = self as? TodayMainViewController {
+            let accountMainViewController = AccountMainViewController(todayVC: todayVC)
+            let accountNavigationController = UINavigationController(rootViewController: accountMainViewController)
+            present(accountNavigationController, animated: true, completion: nil)
+        } else {
+            let accountMainViewController = AccountMainViewController()
+            let accountNavigationController = UINavigationController(rootViewController: accountMainViewController)
+            present(accountNavigationController, animated: true, completion: nil)
+        }
+    }
+    
 }

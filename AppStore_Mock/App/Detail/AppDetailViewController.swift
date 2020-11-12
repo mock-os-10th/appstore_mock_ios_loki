@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SwiftKeychainWrapper
 
 class AppDetailViewController: UIViewController {
     var applicationId: Int?
@@ -47,8 +48,16 @@ class AppDetailViewController: UIViewController {
                 return
             }
             appIconImageView.setImage(url: result.IconImage)
-            if result.Price > 0 {
-                downloadButton.setTitle("₩\(result.Price)", for: .normal)
+            if UserDefaults.standard.value(forKey: result.ApplicationName) != nil {
+                downloadButton.setTitle("열기", for: .normal)
+                downloadButton.removeTarget(nil, action: nil, for: .allEvents)
+            } else {
+                if result.Price > 0 {
+                    downloadButton.setTitle(result.Price.price, for: .normal)
+                } else {
+                    downloadButton.setTitle("받기", for: .normal)
+                }
+                downloadButton.addTarget(self, action: #selector(downloadButtonClicked(sender:)), for: .touchUpInside)
             }
         }
     }
@@ -124,6 +133,8 @@ extension AppDetailViewController {
             make.right.equalToSuperview().offset(-8)
             make.centerY.equalToSuperview()
         }
+        
+        downloadButton.addTarget(self, action: #selector(downloadButtonClicked(sender:)), for: .touchUpInside)
     }
     
     func dismissSubviewsOfNavigationBar() {
@@ -135,6 +146,22 @@ extension AppDetailViewController {
         let appVersionDetailViewController = AppVersionDetailViewController(appUpdateInfoResult)
         
         self.navigationController?.pushViewController(appVersionDetailViewController, animated: true)
+    }
+    
+    @objc func downloadButtonClicked(sender: UIButton) {
+        guard let result = appDetailResult else {
+            return
+        }
+        if KeychainWrapper.standard.string(forKey: .jwt) == nil {
+            let logInViewController = LogInViewController(appIconImageUrl: result.IconImage, applicationId: result.ApplicationId, appName: result.ApplicationName, devName: result.Summary, inAppPurchase: result.InAppPurchase, price: result.Price)
+            logInViewController.sender = sender
+            self.present(logInViewController, animated: true, completion: nil)
+        } else {
+            let downloadViewController = DownloadViewController(appIconImageUrl: result.IconImage, applicationId: result.ApplicationId, appName: result.ApplicationName, devName: result.Summary, inAppPurchase: result.InAppPurchase, price: result.Price)
+            downloadViewController.sender = sender
+            downloadViewController.modalPresentationStyle = .overFullScreen
+            self.present(downloadViewController, animated: true, completion: nil)
+        }
     }
 }
 
@@ -157,8 +184,15 @@ extension AppDetailViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.appIconImageView.setImage(url: result.IconImage)
                 cell.appNameLabel.text = result.ApplicationName
                 cell.appSummaryLabel.text = result.Summary
-                if result.Price > 0 {
-                    cell.downloadButton.setTitle("₩\(result.Price)", for: .normal)
+                if UserDefaults.standard.value(forKey: result.ApplicationName) != nil {
+                    cell.downloadButton.setTitle("열기", for: .normal)
+                } else {
+                    cell.downloadButton.addTarget(self, action: #selector(downloadButtonClicked(sender:)), for: .touchUpInside)
+                    if result.Price > 0 {
+                        cell.downloadButton.setTitle(result.Price.price, for: .normal)
+                    } else {
+                        cell.downloadButton.setTitle("받기", for: .normal)
+                    }
                 }
                 
                 return cell

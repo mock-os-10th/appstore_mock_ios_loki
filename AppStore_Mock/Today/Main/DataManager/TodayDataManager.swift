@@ -10,7 +10,7 @@ class TodayDataManager {
     static let shared = TodayDataManager()
     
     func getAdvertisements(viewController: TodayMainViewController) {
-        let url = "\(Constant.BASEL_URL)/app/advertisement"
+        let url = "\(Constant.BASEL_URL)/advertisement"
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseDecodable(of: TodayResponse.self) { (response) in
             switch response.result {
             case .success(let response):

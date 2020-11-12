@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
-class TodayMainViewController: BaseViewController {
+class TodayMainViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -62,10 +63,6 @@ extension TodayMainViewController {
         self.dismissIndicator()
         self.presentAlert(title: message)
     }
-    
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    }
-    
 }
 
 extension TodayMainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -98,8 +95,27 @@ extension TodayMainViewController: UICollectionViewDelegate, UICollectionViewDat
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TodayHeaderView", for: indexPath) as! TodayHeaderView
-            headerView.accountButton.setImage(UIImage(systemName: "person.circle"), for: .normal)
             headerView.dayLabel.text = Date().currentDay
+            headerView.accountButton.addTarget(self, action: #selector(openAccountViewController), for: .touchUpInside)
+            if let url = KeychainWrapper.standard.string(forKey: .profileUrl) {
+                print(url)
+                DispatchQueue.global().async {
+                    if let realUrl = URL(string: url) {
+                        do {
+                            let data = try Data(contentsOf: realUrl)
+                            print("투데이에서 이미지 데이터 만들어짐")
+                            DispatchQueue.main.async {
+                                headerView.accountButton.setImage(UIImage(data: data), for: .normal)
+                            }
+                        } catch {
+                            print(error.localizedDescription)
+                        }
+                    }
+                }
+            } else {
+                headerView.accountButton.setImage(UIImage(systemName: "person.circle"), for: .normal)
+            }
+            
             
             return headerView
         default:

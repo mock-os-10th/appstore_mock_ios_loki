@@ -54,8 +54,6 @@ class AppVersionDetailViewController: UIViewController {
             }
         }
     }
-    
-
 }
 
 extension AppVersionDetailViewController: UITableViewDelegate, UITableViewDataSource {

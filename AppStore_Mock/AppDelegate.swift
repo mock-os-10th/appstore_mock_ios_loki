@@ -7,6 +7,8 @@
 
 import UIKit
 import AlamofireNetworkActivityIndicator
+import KakaoSDKCommon
+import SwiftKeychainWrapper
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // StatusBardㅔ Alamofire 시도 중 Indicator 띄워주기 위한 옵션 설정
         NetworkActivityIndicatorManager.shared.isEnabled = true
+        KakaoSDKCommon.initSDK(appKey: KakaoKey.NATIVE_APP_KEY)
         
         return true
     }
@@ -34,6 +37,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        KeychainWrapper.standard.remove(forKey: .jwt)
+        KeychainWrapper.standard.remove(forKey: .email)
+        KeychainWrapper.standard.remove(forKey: .name)
+        KeychainWrapper.standard.remove(forKey: .profileUrl)
+        resetDefaults()
+    }
+    
+    func resetDefaults() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
     }
 
 

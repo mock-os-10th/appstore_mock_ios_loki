@@ -11,7 +11,7 @@ class AppDetailDataManager {
     static let shared = AppDetailDataManager()
     
     func getAppDetailInfoOfApplicationId(applicationId: Int, viewController: AppDetailViewController) {
-        let url = "\(Constant.BASEL_URL)/app/specification" + "?appid=\(applicationId)"
+        let url = "\(Constant.BASEL_URL)/application" + "/\(applicationId)" + "/specification"
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseDecodable(of: AppDetailResponse.self) { (response) in
             switch response.result {
             case .success(let response):
@@ -25,7 +25,7 @@ class AppDetailDataManager {
     }
     
     func getAppVersionsOfApplicationId(applicationId: Int, viewController: AppDetailViewController) {
-        let url = "\(Constant.BASEL_URL)/app/updateinfo" + "?appid=\(applicationId)"
+        let url = "\(Constant.BASEL_URL)/application" + "/\(applicationId)" + "/updateinfo"
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseDecodable(of: AppUpdateInfoResponse.self) { (response) in
             switch response.result {
             case .success(let response):

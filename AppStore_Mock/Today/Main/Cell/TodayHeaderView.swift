@@ -16,9 +16,9 @@ class TodayHeaderView: UICollectionReusableView {
         // Initialization code
         accountButton.contentVerticalAlignment = .fill
         accountButton.contentHorizontalAlignment = .fill
-        accountButton.imageView?.contentMode = .scaleToFill
         accountButton.clipsToBounds = true
         self.backgroundColor = UIColor.todayBackgroundColor
+        self.accountButton.layer.cornerRadius = 15
     }
     
 }

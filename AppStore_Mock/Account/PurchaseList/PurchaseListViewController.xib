@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PurchaseListViewController" customModule="AppStore_Mock" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="9YP-rJ-Sd9" id="Mby-Mo-q0f"/>
+                <outlet property="segmentControl" destination="Psw-jh-LJw" id="RxD-kV-4to"/>
+                <outlet property="tableView" destination="lf0-OV-o81" id="Rsw-8s-KeS"/>
+                <outlet property="tableViewHeight" destination="jVQ-ZT-28K" id="OBv-kM-y3O"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Psw-jh-LJw">
+                    <rect key="frame" x="20" y="98" width="374" height="32"/>
+                    <segments>
+                        <segment title="전체"/>
+                        <segment title="이 iPhone에 없음"/>
+                    </segments>
+                </segmentedControl>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ku-ev-HNa">
+                    <rect key="frame" x="0.0" y="139" width="414" height="723"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLB-xu-G4P">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="356"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9YP-rJ-Sd9">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lf0-OV-o81">
+                                    <rect key="frame" x="0.0" y="56" width="414" height="300"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="300" id="jVQ-ZT-28K"/>
+                                    </constraints>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="9YP-rJ-Sd9" secondAttribute="trailing" id="2rk-m5-UD3"/>
+                                <constraint firstItem="9YP-rJ-Sd9" firstAttribute="top" secondItem="VLB-xu-G4P" secondAttribute="top" id="Miz-zS-gvz"/>
+                                <constraint firstItem="lf0-OV-o81" firstAttribute="leading" secondItem="VLB-xu-G4P" secondAttribute="leading" id="NWf-eW-II7"/>
+                                <constraint firstAttribute="bottom" secondItem="lf0-OV-o81" secondAttribute="bottom" id="fiy-gY-fW5"/>
+                                <constraint firstItem="lf0-OV-o81" firstAttribute="top" secondItem="9YP-rJ-Sd9" secondAttribute="bottom" id="mZO-2F-qz5"/>
+                                <constraint firstAttribute="trailing" secondItem="lf0-OV-o81" secondAttribute="trailing" id="qZa-Gi-2au"/>
+                                <constraint firstItem="9YP-rJ-Sd9" firstAttribute="leading" secondItem="VLB-xu-G4P" secondAttribute="leading" id="uu0-aD-NFB"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="VLB-xu-G4P" firstAttribute="width" secondItem="Kby-Mf-yde" secondAttribute="width" id="SGc-SH-bTn"/>
+                        <constraint firstItem="VLB-xu-G4P" firstAttribute="top" secondItem="SEG-cq-mKh" secondAttribute="top" id="iJ7-YM-wet"/>
+                        <constraint firstItem="VLB-xu-G4P" firstAttribute="bottom" secondItem="SEG-cq-mKh" secondAttribute="bottom" id="kK2-fk-EeN"/>
+                        <constraint firstItem="VLB-xu-G4P" firstAttribute="trailing" secondItem="SEG-cq-mKh" secondAttribute="trailing" id="uWk-Pi-Srz"/>
+                        <constraint firstItem="VLB-xu-G4P" firstAttribute="leading" secondItem="SEG-cq-mKh" secondAttribute="leading" id="z2Q-PU-YT2"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="SEG-cq-mKh"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="Kby-Mf-yde"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="3ku-ev-HNa" secondAttribute="bottom" id="1vY-M8-wX9"/>
+                <constraint firstItem="3ku-ev-HNa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2cV-t6-fsq"/>
+                <constraint firstItem="3ku-ev-HNa" firstAttribute="top" secondItem="Psw-jh-LJw" secondAttribute="bottom" constant="10" id="64Z-7r-HFP"/>
+                <constraint firstItem="Psw-jh-LJw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="8JM-JC-5mM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3ku-ev-HNa" secondAttribute="trailing" id="9rN-F9-yrB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Psw-jh-LJw" secondAttribute="trailing" constant="20" id="brn-lL-QPx"/>
+                <constraint firstItem="Psw-jh-LJw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="nxg-OE-zAB"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="115.94202898550725" y="85.714285714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

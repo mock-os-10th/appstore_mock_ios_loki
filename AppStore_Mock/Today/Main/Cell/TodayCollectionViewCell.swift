@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AppstoreTransition
 
 class TodayCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var containerView: UIView!

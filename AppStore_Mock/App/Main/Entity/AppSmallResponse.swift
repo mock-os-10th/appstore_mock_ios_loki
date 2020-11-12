@@ -8,7 +8,7 @@
 struct AppSmallResponse: Decodable {
     var isSuccess: Bool
     var code: Int
-    var result: [AppSmallResult]
+    var result: [AppSmallResult]?
     var keyword: String
     var message: String
 }

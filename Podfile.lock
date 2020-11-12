@@ -2,28 +2,81 @@ PODS:
   - Alamofire (5.3.0)
   - AlamofireNetworkActivityIndicator (3.1.0):
     - Alamofire (~> 5.1)
-  - appstore-card-transition (1.0.4)
+  - KakaoSDK (2.0.4):
+    - KakaoSDKAuth (= 2.0.4)
+    - KakaoSDKCommon (= 2.0.4)
+    - KakaoSDKLink (= 2.0.4)
+    - KakaoSDKNavi (= 2.0.4)
+    - KakaoSDKStory (= 2.0.4)
+    - KakaoSDKTalk (= 2.0.4)
+    - KakaoSDKTemplate (= 2.0.4)
+    - KakaoSDKUser (= 2.0.4)
+  - KakaoSDKAuth (2.0.4):
+    - KakaoSDKCommon (= 2.0.4)
+  - KakaoSDKCommon (2.0.4):
+    - Alamofire (~> 5.1)
+  - KakaoSDKLink (2.0.4):
+    - KakaoSDKCommon (= 2.0.4)
+    - KakaoSDKTemplate (= 2.0.4)
+  - KakaoSDKNavi (2.0.4):
+    - KakaoSDKCommon (= 2.0.4)
+  - KakaoSDKStory (2.0.4):
+    - KakaoSDKAuth (= 2.0.4)
+    - KakaoSDKCommon (= 2.0.4)
+  - KakaoSDKTalk (2.0.4):
+    - KakaoSDKAuth (= 2.0.4)
+    - KakaoSDKCommon (= 2.0.4)
+    - KakaoSDKTemplate (= 2.0.4)
+  - KakaoSDKTemplate (2.0.4):
+    - KakaoSDKCommon (= 2.0.4)
+  - KakaoSDKUser (2.0.4):
+    - KakaoSDKAuth (= 2.0.4)
+    - KakaoSDKCommon (= 2.0.4)
+  - SemiModalViewController (1.0.1)
   - SnapKit (5.0.1)
+  - SwiftKeychainWrapper (4.0.1)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireNetworkActivityIndicator
-  - appstore-card-transition
+  - KakaoSDK
+  - SemiModalViewController
   - SnapKit
+  - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireNetworkActivityIndicator
-    - appstore-card-transition
+    - KakaoSDK
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKLink
+    - KakaoSDKNavi
+    - KakaoSDKStory
+    - KakaoSDKTalk
+    - KakaoSDKTemplate
+    - KakaoSDKUser
+    - SemiModalViewController
     - SnapKit
+    - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
   AlamofireNetworkActivityIndicator: 6564782bd7b9e6c430ae67d9277af01907b01ca4
-  appstore-card-transition: 660c136cb8a0f0004b2e99e99f1305bfa041f05c
+  KakaoSDK: 9e2d0ddb9828e7e68cdc45cb756d4c649c65b1ba
+  KakaoSDKAuth: 3a88e4a110243f8c6b9948c5ec85670c7acaebf6
+  KakaoSDKCommon: 070472d0638ea6b28684a23c195e47015349e51b
+  KakaoSDKLink: a90a919c4b00dc85bbf21d91842961c105317317
+  KakaoSDKNavi: 698659afffcd6d069febe0d1eab7a2dc524697f5
+  KakaoSDKStory: da6ee55062acc3bd667315773671e55c85b5ca56
+  KakaoSDKTalk: 8cf6299b0eea7cf3139ab0f62b415fd054f83a29
+  KakaoSDKTemplate: 330007aea0b46de1ed93e4cbddc7b4c3b59bdc25
+  KakaoSDKUser: 7951e09f9e6de3908ae2d7f8486290c8607c217a
+  SemiModalViewController: 13fe8b991b501c7cd6a9ec7c782ed7a5c72c12e6
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
 
-PODFILE CHECKSUM: 1a16cea15ed089bf0f2ba98a8c9eaf62b785252c
+PODFILE CHECKSUM: 879ab2c398cde31ed6325b93273b17de86992f58
 
 COCOAPODS: 1.9.3

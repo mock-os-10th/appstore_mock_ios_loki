@@ -10,8 +10,8 @@ import Alamofire
 class SearchDataManager {
     static let shared =  SearchDataManager()
     
-    func getSearchResults(searchKeyword: String, viewController: SearchMainViewController) {
-        let original = "\(Constant.BASEL_URL)/apps/searchword" + "?word=\(searchKeyword)"
+    func getSearchResults(searchKeyword: String, pagenum: Int, viewController: SearchMainViewController) {
+        let original = "\(Constant.BASEL_URL)/application/search" + "?word=\(searchKeyword)" + "&pagenum=\(pagenum)"
         
         guard let target = original.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             // 인코딩중 에러가 발생함

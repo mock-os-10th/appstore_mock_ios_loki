@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class SearchMainViewController: BaseViewController {
 
@@ -37,6 +38,11 @@ class SearchMainViewController: BaseViewController {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "default")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
+    
     override func setUpAccountButton() {
         guard let navigationBar = self.navigationController?.navigationBar else {
             return
@@ -47,6 +53,8 @@ class SearchMainViewController: BaseViewController {
             make.bottom.equalTo(navigationBar.snp.bottom).offset(-65)
             make.height.width.equalTo(34)
         }
+        
+        setUpAccountButtonImage(url: KeychainWrapper.standard.string(forKey: .profileUrl))
     }
 
 
@@ -59,6 +67,7 @@ class SearchMainViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }
 
@@ -90,6 +99,19 @@ extension SearchMainViewController {
             }
         }
     }
+    
+    @objc func downloadButtonClicked(sender: UIButton) {
+        if KeychainWrapper.standard.string(forKey: .jwt) == nil {
+            let logInViewController = LogInViewController(appIconImageUrl: searchResults[sender.tag].IconImage, applicationId: searchResults[sender.tag].ApplicationId, appName: searchResults[sender.tag].ApplicationName, devName: searchResults[sender.tag].Summary, inAppPurchase: searchResults[sender.tag].InAppPurchase, price: searchResults[sender.tag].Price)
+            logInViewController.sender = sender
+            self.present(logInViewController, animated: true, completion: nil)
+        } else {
+            let downloadViewController = DownloadViewController(appIconImageUrl: searchResults[sender.tag].IconImage, applicationId: searchResults[sender.tag].ApplicationId, appName: searchResults[sender.tag].ApplicationName, devName: searchResults[sender.tag].Summary, inAppPurchase: searchResults[sender.tag].InAppPurchase, price: searchResults[sender.tag].Price)
+            
+            downloadViewController.sender = sender
+            self.present(downloadViewController, animated: true, completion: nil)
+        }
+    }
 }
 
 extension SearchMainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -114,6 +136,18 @@ extension SearchMainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.previewImageView1.setImage(url: searchResults[indexPath.row].ImageSet[0].AppImages)
         cell.previewImageView2.setImage(url: searchResults[indexPath.row].ImageSet[1].AppImages)
         cell.previewImageView3.setImage(url: searchResults[indexPath.row].ImageSet[2].AppImages)
+        cell.downloadButton.tag = indexPath.row
+        if UserDefaults.standard.value(forKey: searchResults[indexPath.row].ApplicationName) != nil {
+            cell.downloadButton.setTitle("열기", for: .normal)
+            cell.downloadButton.removeTarget(nil, action: nil, for: .allEvents)
+        } else {
+            if searchResults[indexPath.row].Price > 0 {
+                cell.downloadButton.setTitle(searchResults[indexPath.row].Price.price, for: .normal)
+            } else {
+                cell.downloadButton.setTitle("받기", for: .normal)
+            }
+            cell.downloadButton.addTarget(self, action: #selector(downloadButtonClicked(sender:)), for: .touchUpInside)
+        }
         
         return cell
     }
@@ -140,7 +174,7 @@ extension SearchMainViewController: UISearchBarDelegate {
         print("search button clicked")
         self.showIndicator()
         if let searchKeyword = searchBar.text, !searchKeyword.isEmpty {
-            SearchDataManager.shared.getSearchResults(searchKeyword: searchKeyword, viewController: self)
+            SearchDataManager.shared.getSearchResults(searchKeyword: searchKeyword, pagenum: 1, viewController: self)
         } else {
             self.presentAlert(title: "검색어를 입력해주세요.")
         }

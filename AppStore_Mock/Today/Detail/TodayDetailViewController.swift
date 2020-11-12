@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class TodayDetailViewController: UIViewController {
     @IBOutlet weak var contentScrollView: UIScrollView!
@@ -104,6 +105,17 @@ class TodayDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        if let result = result {
+            if UserDefaults.standard.value(forKey: result.ApplicationName) != nil {
+                downloadButton.setTitle("열기", for: .normal)
+                downloadButton.removeTarget(nil, action: nil, for: .allEvents)
+            } else {
+                if result.Price > 0 {
+                    downloadButton.setTitle(result.Price.price, for: .normal)
+                }
+                downloadButton.addTarget(self, action: #selector(downloadButtonClicked(sender:)), for: .touchUpInside)
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -135,6 +147,24 @@ extension TodayDetailViewController {
     
     @objc func closeDetailViewController() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func downloadButtonClicked(sender: UIButton) {
+        guard let result = result else {
+            return
+        }
+        if KeychainWrapper.standard.string(forKey: .jwt) == nil {
+            let logInViewController = LogInViewController(appIconImageUrl: result.IconImage, applicationId: result.ApplicationId, appName: result.ApplicationName, devName: result.Summary, inAppPurchase: result.InAppPurchase, price: result.Price)
+            
+            logInViewController.sender = sender
+            self.present(logInViewController, animated: true, completion: nil)
+        } else {
+            let downloadViewController = DownloadViewController(appIconImageUrl: result.IconImage, applicationId: result.ApplicationId, appName: result.ApplicationName, devName: result.Summary, inAppPurchase: result.InAppPurchase, price: result.Price)
+            downloadViewController.sender = sender
+            
+            downloadViewController.modalPresentationStyle = .overFullScreen
+            self.present(downloadViewController, animated: true, completion: nil)
+        }
     }
 }
 
