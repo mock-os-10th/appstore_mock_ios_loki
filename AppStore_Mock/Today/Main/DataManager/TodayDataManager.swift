@@ -9,13 +9,16 @@ import Alamofire
 class TodayDataManager {
     static let shared = TodayDataManager()
     
-    func getAdvertisements(viewController: TodayMainViewController) {
-        let url = "\(Constant.BASEL_URL)/advertisement"
+    func getAdvertisements(viewController: TodayMainViewController, lastCursor: Int?) {
+        var url: String = "\(Constant.BASEL_URL)/advertisement"
+        if let lastCursor = lastCursor {
+            url += "?LastCursor=\(lastCursor)"
+        }
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseDecodable(of: TodayResponse.self) { (response) in
             switch response.result {
             case .success(let response):
                 if response.isSuccess {
-                    viewController.didRetrieveAdvertisements(result: response.result)
+                    viewController.didRetrieveAdvertisements(response: response)
                 } else {
                     viewController.failedToRequest(message: response.message)
                 }

@@ -21,6 +21,7 @@ class TodayDetailViewController: UIViewController {
     @IBOutlet weak var appSummaryLabel: UILabel!
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var inAppPurchaseLabel: UILabel!
+    @IBOutlet weak var storyButton: UIButton!
     
     let closeButton: UIButton = {
         let button = UIButton(type: UIButton.ButtonType.custom)
@@ -49,11 +50,14 @@ class TodayDetailViewController: UIViewController {
         view.clipsToBounds = true
         contentScrollView.delegate = self
         
-        self.appIconImageView.layer.cornerRadius = 8
+        self.appIconImageView.layer.cornerRadius = 12
         self.appIconImageView.clipsToBounds = true
         
         self.downloadButton.layer.cornerRadius = 16
         self.downloadButton.clipsToBounds = true
+        
+        self.storyButton.layer.cornerRadius = 8
+        self.storyButton.clipsToBounds = true
         
         
         view.addSubview(closeButton)
@@ -200,7 +204,7 @@ extension TodayDetailViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.bounds.width / 2 - 20, height: 300)
+        return CGSize(width: self.view.bounds.width / 2, height: 300)
     }
     
 }

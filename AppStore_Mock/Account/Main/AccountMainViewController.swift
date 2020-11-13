@@ -205,6 +205,9 @@ extension AccountMainViewController: UITableViewDelegate, UITableViewDataSource 
             if KeychainWrapper.standard.string(forKey: .jwt) == nil {
                 LogInDataManager.shared.logIn(viewController: self)
             }
+        case 1:
+            let purchaseViewController = PurchaseListViewController()
+            self.navigationController?.pushViewController(purchaseViewController, animated: true)
         case 4:
             logOutButtonClicked()
         default:

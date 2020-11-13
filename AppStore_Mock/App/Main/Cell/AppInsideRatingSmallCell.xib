@@ -26,39 +26,38 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y74-9p-E5h">
-                        <rect key="frame" x="78" y="81.5" width="10" height="24"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <rect key="frame" x="78" y="89.5" width="8.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="rLF-Pr-2pX">
-                        <rect key="frame" x="96" y="89" width="234" height="49"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="rLF-Pr-2pX">
+                        <rect key="frame" x="94.5" y="92" width="225.5" height="43"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asd;lfkjaksldfjalskdfas;dfasdf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2j-AV-UOS">
-                                <rect key="frame" x="0.0" y="0.0" width="234" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <rect key="frame" x="0.0" y="0.0" width="225.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 설명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ys6-Gr-3l7">
-                                <rect key="frame" x="0.0" y="25" width="43" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="0.0" y="21.5" width="37.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMY-pN-aMa">
-                        <rect key="frame" x="338" y="98.5" width="65" height="30"/>
+                        <rect key="frame" x="328" y="98.5" width="75" height="30"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="Nn5-iC-eOG"/>
-                            <constraint firstAttribute="width" constant="65" id="qbr-Y1-GMI"/>
+                            <constraint firstAttribute="width" constant="75" id="Nn5-iC-eOG"/>
                         </constraints>
                         <state key="normal" title="받기"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 내 구입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fi-QW-um1">
-                        <rect key="frame" x="354" y="132.5" width="33" height="10"/>
+                        <rect key="frame" x="349" y="132.5" width="33" height="10"/>
                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
                         <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
@@ -74,10 +73,10 @@
                 <constraint firstItem="rLF-Pr-2pX" firstAttribute="centerY" secondItem="bTQ-hD-3yz" secondAttribute="centerY" id="O6q-e3-FnK"/>
                 <constraint firstAttribute="trailing" secondItem="LMY-pN-aMa" secondAttribute="trailing" id="TRL-3x-HCg"/>
                 <constraint firstItem="bTQ-hD-3yz" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="U7I-ON-M8x"/>
-                <constraint firstItem="Y74-9p-E5h" firstAttribute="top" secondItem="bTQ-hD-3yz" secondAttribute="top" id="Wh8-gZ-Epg"/>
                 <constraint firstItem="3fi-QW-um1" firstAttribute="top" secondItem="LMY-pN-aMa" secondAttribute="bottom" constant="4" id="YCI-N3-Fja"/>
                 <constraint firstItem="rLF-Pr-2pX" firstAttribute="leading" secondItem="Y74-9p-E5h" secondAttribute="trailing" constant="8" id="cAI-dm-mQN"/>
                 <constraint firstItem="LMY-pN-aMa" firstAttribute="leading" secondItem="rLF-Pr-2pX" secondAttribute="trailing" constant="8" id="j3F-oc-qeF"/>
+                <constraint firstItem="Y74-9p-E5h" firstAttribute="centerY" secondItem="bTQ-hD-3yz" secondAttribute="centerY" constant="-14" id="l2S-i4-hff"/>
                 <constraint firstItem="bTQ-hD-3yz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="xsR-wZ-fKD"/>
             </constraints>
             <size key="customSize" width="403" height="227"/>

@@ -33,6 +33,10 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    func days(sinceDate: Date) -> Int? {
+        return Calendar.current.dateComponents([.day], from: sinceDate, to: self).day
+    }
+    
     // MARK: 이미지 파일을 저장할 때 마땅한 이름이 없는 경우 현재 일시를 파일 이름으로 사용하기도 합니다.
 //    var fileName: String {
 //        let dateFormatter = DateFormatter()

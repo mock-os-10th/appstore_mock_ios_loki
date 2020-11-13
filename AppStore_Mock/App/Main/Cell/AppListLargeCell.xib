@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AppListLargeCell" rowHeight="110" id="KGk-i7-Jjw" customClass="AppListLargeCell" customModule="AppStore_Mock" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="498" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="498" height="110"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jvX-hC-yvb">
+                        <rect key="frame" x="20" y="12.5" width="85" height="85"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="85" id="0yh-sw-7UN"/>
+                            <constraint firstAttribute="height" constant="85" id="DFY-6y-x64"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4d-jh-MzJ">
+                        <rect key="frame" x="120" y="12.5" width="358" height="23"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 설명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHv-rv-WfW">
+                        <rect key="frame" x="120" y="35.5" width="358" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAY-zl-MLo">
+                        <rect key="frame" x="120" y="67.5" width="75" height="30"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="PcD-PC-0sj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 내 구입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maJ-Bv-lFL">
+                        <rect key="frame" x="203" y="76.5" width="41" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jvX-hC-yvb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2Yw-tP-CaW"/>
+                    <constraint firstItem="maJ-Bv-lFL" firstAttribute="centerY" secondItem="eAY-zl-MLo" secondAttribute="centerY" id="9na-yL-0yt"/>
+                    <constraint firstItem="UHv-rv-WfW" firstAttribute="top" secondItem="V4d-jh-MzJ" secondAttribute="bottom" id="Lb7-gO-Ynh"/>
+                    <constraint firstItem="UHv-rv-WfW" firstAttribute="leading" secondItem="V4d-jh-MzJ" secondAttribute="leading" id="WVD-XI-U3X"/>
+                    <constraint firstItem="V4d-jh-MzJ" firstAttribute="leading" secondItem="jvX-hC-yvb" secondAttribute="trailing" constant="15" id="WaF-UI-Gfs"/>
+                    <constraint firstItem="maJ-Bv-lFL" firstAttribute="leading" secondItem="eAY-zl-MLo" secondAttribute="trailing" constant="8" id="gzh-tt-EUs"/>
+                    <constraint firstItem="eAY-zl-MLo" firstAttribute="bottom" secondItem="jvX-hC-yvb" secondAttribute="bottom" id="l98-pg-Ojb"/>
+                    <constraint firstItem="eAY-zl-MLo" firstAttribute="leading" secondItem="V4d-jh-MzJ" secondAttribute="leading" id="oPl-Ek-B7y"/>
+                    <constraint firstAttribute="trailing" secondItem="V4d-jh-MzJ" secondAttribute="trailing" constant="20" symbolic="YES" id="pgS-mw-zkp"/>
+                    <constraint firstItem="V4d-jh-MzJ" firstAttribute="top" secondItem="jvX-hC-yvb" secondAttribute="top" id="tTs-H4-Zjo"/>
+                    <constraint firstItem="UHv-rv-WfW" firstAttribute="trailing" secondItem="V4d-jh-MzJ" secondAttribute="trailing" id="ttm-5W-VbW"/>
+                    <constraint firstItem="jvX-hC-yvb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="x78-dg-xdg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="appDetailLabel" destination="UHv-rv-WfW" id="r1y-nB-fom"/>
+                <outlet property="appIconImageView" destination="jvX-hC-yvb" id="7ea-6M-Kui"/>
+                <outlet property="appNameLabel" destination="V4d-jh-MzJ" id="ZlH-DJ-aHk"/>
+                <outlet property="downloadButton" destination="eAY-zl-MLo" id="j4g-v5-FWb"/>
+                <outlet property="inAppPurchaseLabel" destination="maJ-Bv-lFL" id="t5W-ud-hT8"/>
+            </connections>
+            <point key="canvasLocation" x="205.79710144927537" y="165.40178571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

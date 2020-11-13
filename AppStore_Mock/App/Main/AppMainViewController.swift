@@ -28,6 +28,8 @@ class AppMainViewController: BaseViewController {
         self.collectionView.register(UINib(nibName: "AppLargeCell", bundle: Bundle.main), forCellWithReuseIdentifier: "AppLargeCell")
         self.collectionView.register(UINib(nibName: "AppSmallCell", bundle: Bundle.main), forCellWithReuseIdentifier: "AppSmallCell")
         self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "default")
+        
+        
         self.showIndicator()
         
         AppDataManager.shared.getAdvertisements(viewController: self)
@@ -41,6 +43,7 @@ class AppMainViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.collectionView.reloadData()
     }
 
@@ -74,6 +77,11 @@ extension AppMainViewController {
         self.presentAlert(title: message)
     }
     
+    @objc func seeAllButtonClicked(sender: UIButton) {
+        let appListViewController = AppListViewController(response: appSmallResponses[sender.tag])
+        
+        self.navigationController?.pushViewController(appListViewController, animated: true)
+    }
 }
 
 extension AppMainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -112,6 +120,9 @@ extension AppMainViewController: UICollectionViewDelegate, UICollectionViewDataS
                 if let result = appSmallResponses[indexPath.row - 1].result {
                     cell.result = result
                 }
+                cell.seeAllButton.tag = indexPath.row - 1
+                cell.seeAllButton.addTarget(self, action: #selector(seeAllButtonClicked(sender:)), for: .touchUpInside)
+                
                 
                 return cell
             }
@@ -124,7 +135,7 @@ extension AppMainViewController: UICollectionViewDelegate, UICollectionViewDataS
             return CGSize(width: UIScreen.main.bounds.size.width, height: 300)
         }
         
-        return CGSize(width: UIScreen.main.bounds.size.width, height: 320)
+        return CGSize(width: UIScreen.main.bounds.size.width, height: 350)
     }
     
 }

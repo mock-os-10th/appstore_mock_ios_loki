@@ -13,7 +13,9 @@ class TodayMainViewController: UIViewController {
     
     
     var todayResults = [TodayResult]()
-    
+    var isLoading = false
+    var loadingView: IndicatorReusableView?
+    var lastCursor: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,7 @@ class TodayMainViewController: UIViewController {
         collectionView.register(UINib(nibName: "TodayCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "TodayCollectionViewCell")
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "default")
         collectionView.register(UINib(nibName: "TodayHeaderView", bundle: Bundle.main), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TodayHeaderView")
+        collectionView.register(UINib(nibName: "IndicatorReusableView", bundle: Bundle.main), forCellWithReuseIdentifier: "IndicatorReusableView")
         
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             let height = UIScreen.main.bounds.height / 2 + 80
@@ -36,7 +39,7 @@ class TodayMainViewController: UIViewController {
         }
         
         self.showIndicator()
-        TodayDataManager.shared.getAdvertisements(viewController: self)
+        TodayDataManager.shared.getAdvertisements(viewController: self, lastCursor: nil)
     }
     
 
@@ -53,8 +56,10 @@ class TodayMainViewController: UIViewController {
 }
 
 extension TodayMainViewController {
-    func didRetrieveAdvertisements(result: [TodayResult]) {
-        self.todayResults.append(contentsOf: result)
+    func didRetrieveAdvertisements(response: TodayResponse) {
+        self.todayResults.append(contentsOf: response.result)
+        self.lastCursor = response.LastCursor
+        self.isLoading = false
         self.dismissIndicator()
         self.collectionView.reloadData()
     }
@@ -62,6 +67,17 @@ extension TodayMainViewController {
     func failedToRequest(message: String) {
         self.dismissIndicator()
         self.presentAlert(title: message)
+    }
+    
+    func loadMoreData() {
+        if !self.isLoading {
+            self.isLoading = true
+            if let lastCursor = lastCursor {
+                TodayDataManager.shared.getAdvertisements(viewController: self, lastCursor: lastCursor)
+            } else {
+                self.isLoading = false
+            }
+        }
     }
 }
 
@@ -118,6 +134,12 @@ extension TodayMainViewController: UICollectionViewDelegate, UICollectionViewDat
             
             
             return headerView
+        case UICollectionView.elementKindSectionFooter:
+            if let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "IndicatorReusableView", for: indexPath) as? IndicatorReusableView {
+                loadingView = footerView
+                loadingView?.backgroundColor = .clear
+                return footerView
+            }
         default:
             break
         }
@@ -127,6 +149,32 @@ extension TodayMainViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        if self.isLoading {
+            return CGSize.zero
+        } else {
+            return CGSize(width: collectionView.bounds.size.width, height: 55)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+        if elementKind == UICollectionView.elementKindSectionFooter {
+            self.loadingView?.activityIndicator.startAnimating()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
+        if elementKind == UICollectionView.elementKindSectionFooter {
+            self.loadingView?.activityIndicator.stopAnimating()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == todayResults.count - 1, !isLoading {
+            loadMoreData()
+        }
     }
 }
 

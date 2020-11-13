@@ -25,58 +25,57 @@
                             <constraint firstAttribute="height" constant="64" id="odW-kQ-yNj"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="tao-ch-3mq">
-                        <rect key="frame" x="84" y="43" width="175" height="64"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEw-mX-Cqm">
+                        <rect key="frame" x="257" y="60" width="75" height="30"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="bir-fn-b3x"/>
+                        </constraints>
+                        <state key="normal" title="받기"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 내 구입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4V-d3-Khl">
+                        <rect key="frame" x="278" y="94" width="33" height="10"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="V3S-bs-K7O">
+                        <rect key="frame" x="80" y="53.5" width="169" height="43"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RP-3o-Bix">
-                                <rect key="frame" x="0.0" y="0.0" width="57" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxM-mv-iav">
+                                <rect key="frame" x="0.0" y="0.0" width="51.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 설명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vs3-WV-o8P">
-                                <rect key="frame" x="0.0" y="32.5" width="43" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 서머리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSL-5U-eX4">
+                                <rect key="frame" x="0.0" y="21.5" width="49" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEw-mX-Cqm">
-                        <rect key="frame" x="267" y="60" width="65" height="30"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="65" id="bir-fn-b3x"/>
-                        </constraints>
-                        <state key="normal" title="받기"/>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 내 구입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4V-d3-Khl">
-                        <rect key="frame" x="283" y="94" width="33" height="10"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                        <color key="textColor" systemColor="systemGrayColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="dEw-mX-Cqm" firstAttribute="leading" secondItem="V3S-bs-K7O" secondAttribute="trailing" constant="8" id="0PB-rC-cyR"/>
                 <constraint firstItem="dEw-mX-Cqm" firstAttribute="centerY" secondItem="l6N-Mk-NWN" secondAttribute="centerY" id="6zZ-BV-QLP"/>
-                <constraint firstItem="dEw-mX-Cqm" firstAttribute="leading" secondItem="tao-ch-3mq" secondAttribute="trailing" constant="8" id="81H-JY-wXX"/>
                 <constraint firstItem="l6N-Mk-NWN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="8Qk-cN-bgz"/>
-                <constraint firstItem="tao-ch-3mq" firstAttribute="bottom" secondItem="l6N-Mk-NWN" secondAttribute="bottom" id="Jek-ay-5KF"/>
+                <constraint firstItem="V3S-bs-K7O" firstAttribute="leading" secondItem="l6N-Mk-NWN" secondAttribute="trailing" constant="8" id="J3A-K0-hjb"/>
                 <constraint firstItem="f4V-d3-Khl" firstAttribute="top" secondItem="dEw-mX-Cqm" secondAttribute="bottom" constant="4" id="OXg-Z1-GrN"/>
-                <constraint firstItem="tao-ch-3mq" firstAttribute="leading" secondItem="l6N-Mk-NWN" secondAttribute="trailing" constant="12" id="PTD-3P-MhF"/>
                 <constraint firstItem="l6N-Mk-NWN" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Y22-l3-Y1t"/>
                 <constraint firstItem="f4V-d3-Khl" firstAttribute="centerX" secondItem="dEw-mX-Cqm" secondAttribute="centerX" id="bZQ-l7-CRa"/>
+                <constraint firstItem="V3S-bs-K7O" firstAttribute="centerY" secondItem="l6N-Mk-NWN" secondAttribute="centerY" id="f36-Oo-tm6"/>
                 <constraint firstAttribute="trailing" secondItem="dEw-mX-Cqm" secondAttribute="trailing" id="rcD-qq-wcn"/>
-                <constraint firstItem="tao-ch-3mq" firstAttribute="top" secondItem="l6N-Mk-NWN" secondAttribute="top" id="yvt-ZR-JUj"/>
             </constraints>
             <size key="customSize" width="332" height="150"/>
             <connections>
-                <outlet property="appDetailLabel" destination="vs3-WV-o8P" id="tOI-NI-AUb"/>
+                <outlet property="appDetailLabel" destination="rSL-5U-eX4" id="VeK-jo-SXh"/>
                 <outlet property="appIconImageView" destination="l6N-Mk-NWN" id="wEn-sg-Mhv"/>
-                <outlet property="appNameLabel" destination="5RP-3o-Bix" id="QzJ-Id-fDu"/>
+                <outlet property="appNameLabel" destination="sxM-mv-iav" id="Rwk-fD-30s"/>
                 <outlet property="downloadButton" destination="dEw-mX-Cqm" id="dYO-8m-8Xn"/>
                 <outlet property="insideAppDownLoadLabel" destination="f4V-d3-Khl" id="Zi5-G1-erN"/>
             </connections>

@@ -56,6 +56,11 @@ extension String {
         return self.replacingOccurrences(of: target, with: withString, options: .literal, range: nil)
     }
     
+    func contains(_ find: String) -> Bool{
+         return self.range(of: find) != nil
+    }
+
+    
     
     // MARK: comma
     // ex. "1234567890".insertComma == "1,234,567,890"

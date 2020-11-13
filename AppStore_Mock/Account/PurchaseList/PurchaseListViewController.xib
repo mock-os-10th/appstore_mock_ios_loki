@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PurchaseListViewController" customModule="AppStore_Mock" customModuleProvider="target">
             <connections>
+                <outlet property="scrollView" destination="3ku-ev-HNa" id="EKE-I3-O1N"/>
                 <outlet property="searchBar" destination="9YP-rJ-Sd9" id="Mby-Mo-q0f"/>
                 <outlet property="segmentControl" destination="Psw-jh-LJw" id="RxD-kV-4to"/>
                 <outlet property="tableView" destination="lf0-OV-o81" id="Rsw-8s-KeS"/>
@@ -72,7 +73,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="3ku-ev-HNa" secondAttribute="bottom" id="1vY-M8-wX9"/>
                 <constraint firstItem="3ku-ev-HNa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2cV-t6-fsq"/>

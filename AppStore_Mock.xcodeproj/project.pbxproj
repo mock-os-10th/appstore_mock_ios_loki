@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		5683196118E8336B07F1E957 /* Pods_AppStore_Mock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D4F50E01F4295BC634075C /* Pods_AppStore_Mock.framework */; };
 		AF10E44A255D6FDC00F61104 /* LogInInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF10E449255D6FDC00F61104 /* LogInInput.swift */; };
+		AF10E44F255D8BA400F61104 /* PurchaseListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF10E44E255D8BA400F61104 /* PurchaseListResponse.swift */; };
+		AF10E453255D8E5E00F61104 /* PurchaseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF10E451255D8E5E00F61104 /* PurchaseListTableViewCell.swift */; };
+		AF10E454255D8E5E00F61104 /* PurchaseListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF10E452255D8E5E00F61104 /* PurchaseListTableViewCell.xib */; };
+		AF10E458255DA52D00F61104 /* PurchaseListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF10E457255DA52D00F61104 /* PurchaseListDataManager.swift */; };
 		AF15A40E2557116B0074B59A /* AppDetailHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15A40C2557116B0074B59A /* AppDetailHeaderTableViewCell.swift */; };
 		AF15A40F2557116B0074B59A /* AppDetailHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF15A40D2557116B0074B59A /* AppDetailHeaderTableViewCell.xib */; };
 		AF15A416255735260074B59A /* AppUpdateInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15A415255735260074B59A /* AppUpdateInfoResponse.swift */; };
@@ -45,8 +49,6 @@
 		AF676885255C85E800F4DC27 /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF676883255C85E800F4DC27 /* LogInViewController.xib */; };
 		AF67689A255D0B1100F4DC27 /* PurchaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF676898255D0B1100F4DC27 /* PurchaseListViewController.swift */; };
 		AF67689B255D0B1100F4DC27 /* PurchaseListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF676899255D0B1100F4DC27 /* PurchaseListViewController.xib */; };
-		AF6768A0255D0E4700F4DC27 /* NoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67689E255D0E4700F4DC27 /* NoneTableViewCell.swift */; };
-		AF6768A1255D0E4700F4DC27 /* NoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF67689F255D0E4700F4DC27 /* NoneTableViewCell.xib */; };
 		AF6C1AC325598D2200D18B07 /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C1AC125598D2200D18B07 /* TodayCollectionViewCell.swift */; };
 		AF6C1AC425598D2200D18B07 /* TodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6C1AC225598D2200D18B07 /* TodayCollectionViewCell.xib */; };
 		AF6C1AC9255996FE00D18B07 /* TodayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C1AC8255996FE00D18B07 /* TodayResponse.swift */; };
@@ -57,6 +59,12 @@
 		AF6C1AEB2559EE4A00D18B07 /* TodayDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6C1AE92559EE4A00D18B07 /* TodayDetailViewController.xib */; };
 		AF6C1B1F255A9F8E00D18B07 /* TodayHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C1B1D255A9F8E00D18B07 /* TodayHeaderView.swift */; };
 		AF6C1B20255A9F8E00D18B07 /* TodayHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6C1B1E255A9F8E00D18B07 /* TodayHeaderView.xib */; };
+		AF951A14255DDAAB00C00AD8 /* IndicatorReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF951A12255DDAAB00C00AD8 /* IndicatorReusableView.swift */; };
+		AF951A15255DDAAB00C00AD8 /* IndicatorReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF951A13255DDAAB00C00AD8 /* IndicatorReusableView.xib */; };
+		AF951A1D255DF87700C00AD8 /* AppListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF951A1B255DF87700C00AD8 /* AppListViewController.swift */; };
+		AF951A1E255DF87700C00AD8 /* AppListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF951A1C255DF87700C00AD8 /* AppListViewController.xib */; };
+		AF951A23255DFBC400C00AD8 /* AppListLargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF951A21255DFBC400C00AD8 /* AppListLargeCell.swift */; };
+		AF951A24255DFBC400C00AD8 /* AppListLargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF951A22255DFBC400C00AD8 /* AppListLargeCell.xib */; };
 		AFA5879B2551868000AC205E /* AppInsideRatingSmallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFD5FB96255184780037F87C /* AppInsideRatingSmallCell.xib */; };
 		AFA92195254DC33600C640AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA92194254DC33600C640AC /* AppDelegate.swift */; };
 		AFA92197254DC33600C640AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA92196254DC33600C640AC /* SceneDelegate.swift */; };
@@ -120,6 +128,10 @@
 		69D4F50E01F4295BC634075C /* Pods_AppStore_Mock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore_Mock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6BBC3CEBD8464AB6548666 /* Pods-AppStore_Mock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore_Mock.debug.xcconfig"; path = "Target Support Files/Pods-AppStore_Mock/Pods-AppStore_Mock.debug.xcconfig"; sourceTree = "<group>"; };
 		AF10E449255D6FDC00F61104 /* LogInInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInInput.swift; sourceTree = "<group>"; };
+		AF10E44E255D8BA400F61104 /* PurchaseListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseListResponse.swift; sourceTree = "<group>"; };
+		AF10E451255D8E5E00F61104 /* PurchaseListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseListTableViewCell.swift; sourceTree = "<group>"; };
+		AF10E452255D8E5E00F61104 /* PurchaseListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseListTableViewCell.xib; sourceTree = "<group>"; };
+		AF10E457255DA52D00F61104 /* PurchaseListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseListDataManager.swift; sourceTree = "<group>"; };
 		AF15A40C2557116B0074B59A /* AppDetailHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		AF15A40D2557116B0074B59A /* AppDetailHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppDetailHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		AF15A415255735260074B59A /* AppUpdateInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdateInfoResponse.swift; sourceTree = "<group>"; };
@@ -156,8 +168,6 @@
 		AF676883255C85E800F4DC27 /* LogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
 		AF676898255D0B1100F4DC27 /* PurchaseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseListViewController.swift; sourceTree = "<group>"; };
 		AF676899255D0B1100F4DC27 /* PurchaseListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseListViewController.xib; sourceTree = "<group>"; };
-		AF67689E255D0E4700F4DC27 /* NoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoneTableViewCell.swift; sourceTree = "<group>"; };
-		AF67689F255D0E4700F4DC27 /* NoneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoneTableViewCell.xib; sourceTree = "<group>"; };
 		AF6C1AC125598D2200D18B07 /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF6C1AC225598D2200D18B07 /* TodayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayCollectionViewCell.xib; sourceTree = "<group>"; };
 		AF6C1AC8255996FE00D18B07 /* TodayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayResponse.swift; sourceTree = "<group>"; };
@@ -168,6 +178,12 @@
 		AF6C1AE92559EE4A00D18B07 /* TodayDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayDetailViewController.xib; sourceTree = "<group>"; };
 		AF6C1B1D255A9F8E00D18B07 /* TodayHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHeaderView.swift; sourceTree = "<group>"; };
 		AF6C1B1E255A9F8E00D18B07 /* TodayHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayHeaderView.xib; sourceTree = "<group>"; };
+		AF951A12255DDAAB00C00AD8 /* IndicatorReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorReusableView.swift; sourceTree = "<group>"; };
+		AF951A13255DDAAB00C00AD8 /* IndicatorReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndicatorReusableView.xib; sourceTree = "<group>"; };
+		AF951A1B255DF87700C00AD8 /* AppListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListViewController.swift; sourceTree = "<group>"; };
+		AF951A1C255DF87700C00AD8 /* AppListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppListViewController.xib; sourceTree = "<group>"; };
+		AF951A21255DFBC400C00AD8 /* AppListLargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListLargeCell.swift; sourceTree = "<group>"; };
+		AF951A22255DFBC400C00AD8 /* AppListLargeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppListLargeCell.xib; sourceTree = "<group>"; };
 		AFA92191254DC33600C640AC /* AppStore_Mock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore_Mock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA92194254DC33600C640AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA92196254DC33600C640AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -246,6 +262,22 @@
 				69D4F50E01F4295BC634075C /* Pods_AppStore_Mock.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF10E44C255D8B7E00F61104 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				AF10E44E255D8BA400F61104 /* PurchaseListResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AF10E44D255D8B8900F61104 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				AF10E457255DA52D00F61104 /* PurchaseListDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		AF3137362553F6A1000B44CC /* Detail */ = {
@@ -374,6 +406,8 @@
 		AF676897255D0AFA00F4DC27 /* PurchaseList */ = {
 			isa = PBXGroup;
 			children = (
+				AF10E44D255D8B8900F61104 /* DataManager */,
+				AF10E44C255D8B7E00F61104 /* Entity */,
 				AF67689D255D0E0200F4DC27 /* Cell */,
 				AF676898255D0B1100F4DC27 /* PurchaseListViewController.swift */,
 				AF676899255D0B1100F4DC27 /* PurchaseListViewController.xib */,
@@ -384,8 +418,8 @@
 		AF67689D255D0E0200F4DC27 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				AF67689E255D0E4700F4DC27 /* NoneTableViewCell.swift */,
-				AF67689F255D0E4700F4DC27 /* NoneTableViewCell.xib */,
+				AF10E451255D8E5E00F61104 /* PurchaseListTableViewCell.swift */,
+				AF10E452255D8E5E00F61104 /* PurchaseListTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -397,6 +431,8 @@
 				AF6C1B1E255A9F8E00D18B07 /* TodayHeaderView.xib */,
 				AF6C1AC125598D2200D18B07 /* TodayCollectionViewCell.swift */,
 				AF6C1AC225598D2200D18B07 /* TodayCollectionViewCell.xib */,
+				AF951A12255DDAAB00C00AD8 /* IndicatorReusableView.swift */,
+				AF951A13255DDAAB00C00AD8 /* IndicatorReusableView.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -597,6 +633,8 @@
 		AFA92206254EE5BE00C640AC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AF951A1B255DF87700C00AD8 /* AppListViewController.swift */,
+				AF951A1C255DF87700C00AD8 /* AppListViewController.xib */,
 				AFA92214254EE69800C640AC /* AppMainViewController.swift */,
 				AFA92215254EE69900C640AC /* AppMainViewController.xib */,
 				AFF911D4255028E900C2A8DE /* Entity */,
@@ -694,6 +732,8 @@
 				AFF911CB254FA83700C2A8DE /* AppInsideSmallCell.xib */,
 				AFD5FB97255184790037F87C /* AppInsideRatingSmallCell.swift */,
 				AFD5FB96255184780037F87C /* AppInsideRatingSmallCell.xib */,
+				AF951A21255DFBC400C00AD8 /* AppListLargeCell.swift */,
+				AF951A22255DFBC400C00AD8 /* AppListLargeCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -784,6 +824,7 @@
 				AF676841255BDDFC00F4DC27 /* AccountMainViewController.xib in Resources */,
 				AF676828255AD28800F4DC27 /* SearchTableViewCell.xib in Resources */,
 				AFA9222C254EE78E00C640AC /* TodayMainViewController.xib in Resources */,
+				AF951A15255DDAAB00C00AD8 /* IndicatorReusableView.xib in Resources */,
 				AFCE4804255575500081E72E /* AppDetailInfoTableViewCell.xib in Resources */,
 				AF6C1ADD2559E23A00D18B07 /* TodayDetailImageCollectionViewCell.xib in Resources */,
 				AFCE4809255577870081E72E /* AppDetailInfoTableViewSmallCell.xib in Resources */,
@@ -805,11 +846,13 @@
 				AF31373A2553F6CB000B44CC /* AppDetailViewController.xib in Resources */,
 				AFA9221C254EE6BB00C640AC /* ArcadeMainViewController.xib in Resources */,
 				AFA92212254EE66800C640AC /* GameMainViewController.xib in Resources */,
-				AF6768A1255D0E4700F4DC27 /* NoneTableViewCell.xib in Resources */,
 				AF15A42325573C3F0074B59A /* AppVersionDetailViewController.xib in Resources */,
+				AF951A1E255DF87700C00AD8 /* AppListViewController.xib in Resources */,
 				AFA92217254EE69900C640AC /* AppMainViewController.xib in Resources */,
 				AFA92221254EE6DA00C640AC /* SearchMainViewController.xib in Resources */,
+				AF10E454255D8E5E00F61104 /* PurchaseListTableViewCell.xib in Resources */,
 				AF67689B255D0B1100F4DC27 /* PurchaseListViewController.xib in Resources */,
+				AF951A24255DFBC400C00AD8 /* AppListLargeCell.xib in Resources */,
 				AF15A41B255737710074B59A /* AppDetailUpdateInfoCell.xib in Resources */,
 				AF676885255C85E800F4DC27 /* LogInViewController.xib in Resources */,
 			);
@@ -881,6 +924,7 @@
 				AFA9222B254EE78E00C640AC /* TodayMainViewController.swift in Sources */,
 				AF313747255565B8000B44CC /* AppDetailInsideImageCell.swift in Sources */,
 				AFA921CE254DC43600C640AC /* Date.swift in Sources */,
+				AF10E458255DA52D00F61104 /* PurchaseListDataManager.swift in Sources */,
 				AFA92230254F14F400C640AC /* BaseViewController.swift in Sources */,
 				AFA92197254DC33600C640AC /* SceneDelegate.swift in Sources */,
 				AF15A42225573C3F0074B59A /* AppVersionDetailViewController.swift in Sources */,
@@ -889,9 +933,11 @@
 				AFCE4808255577870081E72E /* AppDetailInfoTableViewSmallCell.swift in Sources */,
 				AFCE47E925556DDA0081E72E /* AppDetailInfoCell.swift in Sources */,
 				AFF911BE254F407300C2A8DE /* AppInsideLargeCell.swift in Sources */,
+				AF951A1D255DF87700C00AD8 /* AppListViewController.swift in Sources */,
 				AFA92220254EE6DA00C640AC /* SearchMainViewController.swift in Sources */,
 				AF3137392553F6CB000B44CC /* AppDetailViewController.swift in Sources */,
 				AFA921D1254DC43600C640AC /* UIViewController.swift in Sources */,
+				AF951A14255DDAAB00C00AD8 /* IndicatorReusableView.swift in Sources */,
 				AFE398DB2555FFA10068114E /* AppDetailStackViewCell.swift in Sources */,
 				AFD5FB9F255184CE0037F87C /* AppInsideRatingSmallCell.swift in Sources */,
 				AF15A416255735260074B59A /* AppUpdateInfoResponse.swift in Sources */,
@@ -907,8 +953,10 @@
 				AF676840255BDDFC00F4DC27 /* AccountMainViewController.swift in Sources */,
 				AFF911B9254F3FE900C2A8DE /* AppLargeCell.swift in Sources */,
 				AFCE4803255575500081E72E /* AppDetailInfoTableViewCell.swift in Sources */,
+				AF10E44F255D8BA400F61104 /* PurchaseListResponse.swift in Sources */,
 				AFD5FB9225515E430037F87C /* AppDataManager.swift in Sources */,
 				AFF911C7254FA38200C2A8DE /* AppSmallCell.swift in Sources */,
+				AF10E453255D8E5E00F61104 /* PurchaseListTableViewCell.swift in Sources */,
 				AF6C1AC325598D2200D18B07 /* TodayCollectionViewCell.swift in Sources */,
 				AFA921CF254DC43600C640AC /* String.swift in Sources */,
 				AFD5FB83255060E50037F87C /* SnappingCollectionViewLayout.swift in Sources */,
@@ -920,11 +968,11 @@
 				AFA921D3254DC43600C640AC /* UIFont.swift in Sources */,
 				AFA92216254EE69900C640AC /* AppMainViewController.swift in Sources */,
 				AF15A42725573DAB0074B59A /* AppDetailUpdateInfoTableViewCell.swift in Sources */,
-				AF6768A0255D0E4700F4DC27 /* NoneTableViewCell.swift in Sources */,
 				AFA921CC254DC43600C640AC /* IndicatorView.swift in Sources */,
 				AF67689A255D0B1100F4DC27 /* PurchaseListViewController.swift in Sources */,
 				AF15A41A255737710074B59A /* AppDetailUpdateInfoCell.swift in Sources */,
 				AFA921D2254DC43600C640AC /* UINavigationBar.swift in Sources */,
+				AF951A23255DFBC400C00AD8 /* AppListLargeCell.swift in Sources */,
 				AF676884255C85E800F4DC27 /* LogInViewController.swift in Sources */,
 				AF6C1ADC2559E23A00D18B07 /* TodayDetailImageCollectionViewCell.swift in Sources */,
 				AF15A41E25573B020074B59A /* Int.swift in Sources */,
