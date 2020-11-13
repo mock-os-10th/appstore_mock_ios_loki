@@ -30,7 +30,7 @@ class LogInDataManager {
                             if let user = user {
                                 print("Access Token is " + oauthToken.accessToken)
                                 let params: Parameters = ["X_ACCESS_TOKEN": oauthToken.accessToken]
-                                AF.request(url, method: .post, parameters: params, headers: nil).validate().responseDecodable(of: LogInResponse.self) { (response) in
+                                AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseDecodable(of: LogInResponse.self) { (response) in
                                     print(response.result)
                                     switch response.result {
                                     case .success(let response):

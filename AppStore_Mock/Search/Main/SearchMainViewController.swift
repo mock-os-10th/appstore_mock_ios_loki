@@ -137,7 +137,7 @@ extension SearchMainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.previewImageView2.setImage(url: searchResults[indexPath.row].ImageSet[1].AppImages)
         cell.previewImageView3.setImage(url: searchResults[indexPath.row].ImageSet[2].AppImages)
         cell.downloadButton.tag = indexPath.row
-        if UserDefaults.standard.value(forKey: searchResults[indexPath.row].ApplicationName) != nil {
+        if UserDefaults.standard.value(forKey: "\(searchResults[indexPath.row].ApplicationId)") != nil {
             cell.downloadButton.setTitle("열기", for: .normal)
             cell.downloadButton.removeTarget(nil, action: nil, for: .allEvents)
         } else {

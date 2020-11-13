@@ -48,7 +48,7 @@ class AppDetailViewController: UIViewController {
                 return
             }
             appIconImageView.setImage(url: result.IconImage)
-            if UserDefaults.standard.value(forKey: result.ApplicationName) != nil {
+            if UserDefaults.standard.value(forKey: "\(result.ApplicationId)") != nil {
                 downloadButton.setTitle("열기", for: .normal)
                 downloadButton.removeTarget(nil, action: nil, for: .allEvents)
             } else {
@@ -184,7 +184,7 @@ extension AppDetailViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.appIconImageView.setImage(url: result.IconImage)
                 cell.appNameLabel.text = result.ApplicationName
                 cell.appSummaryLabel.text = result.Summary
-                if UserDefaults.standard.value(forKey: result.ApplicationName) != nil {
+                if UserDefaults.standard.value(forKey: "\(result.ApplicationId)") != nil {
                     cell.downloadButton.setTitle("열기", for: .normal)
                 } else {
                     cell.downloadButton.addTarget(self, action: #selector(downloadButtonClicked(sender:)), for: .touchUpInside)

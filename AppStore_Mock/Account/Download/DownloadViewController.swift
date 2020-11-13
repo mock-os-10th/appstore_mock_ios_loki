@@ -112,8 +112,8 @@ extension DownloadViewController {
     
     func finishDownload() {
         print("다운로드가 완료되었습니다.")
-        if let appName = appName {
-            UserDefaults.standard.setValue(true, forKey: appName)
+        if let applicationId = applicationId {
+            UserDefaults.standard.setValue(true, forKey: "\(applicationId)")
         }
         self.dismiss(animated: true) {
             guard let button = self.sender else {

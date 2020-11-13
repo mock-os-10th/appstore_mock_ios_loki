@@ -110,7 +110,7 @@ class TodayDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         if let result = result {
-            if UserDefaults.standard.value(forKey: result.ApplicationName) != nil {
+            if UserDefaults.standard.value(forKey: "\(result.ApplicationId)") != nil {
                 downloadButton.setTitle("열기", for: .normal)
                 downloadButton.removeTarget(nil, action: nil, for: .allEvents)
             } else {

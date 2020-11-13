@@ -20,7 +20,7 @@ class PurchaseListViewController: UIViewController {
     var filteredResults = [PurchaseListResult]()
     var purchaseResultsNotInPhone: [PurchaseListResult] {
         return purchaseResults.filter { (result) -> Bool in
-            if UserDefaults.standard.value(forKey: result.ApplicationName) == nil {
+            if UserDefaults.standard.value(forKey: "\(result.ApplicationId)") == nil {
                 return true
             } else {
                 return false
@@ -179,7 +179,7 @@ extension PurchaseListViewController: UITableViewDelegate, UITableViewDataSource
             if isFiltering {
                 cell.appNameLabel.text = filteredResults[indexPath.row].ApplicationName
                 cell.appIconImageView.setImage(url: filteredResults[indexPath.row].IconImage)
-                if UserDefaults.standard.value(forKey: filteredResults[indexPath.row].ApplicationName) != nil {
+                if UserDefaults.standard.value(forKey: "\(filteredResults[indexPath.row].ApplicationId)") != nil {
                     cell.downloadButton.setTitle("열기", for: .normal)
                 } else {
                     cell.downloadButton.setTitle("받기", for: .normal)
@@ -194,7 +194,7 @@ extension PurchaseListViewController: UITableViewDelegate, UITableViewDataSource
             } else {
                 cell.appNameLabel.text = purchaseResults[indexPath.row].ApplicationName
                 cell.appIconImageView.setImage(url: purchaseResults[indexPath.row].IconImage)
-                if UserDefaults.standard.value(forKey: purchaseResults[indexPath.row].ApplicationName) != nil {
+                if UserDefaults.standard.value(forKey: "\(purchaseResults[indexPath.row].ApplicationId)") != nil {
                     cell.downloadButton.setTitle("열기", for: .normal)
                 } else {
                     cell.downloadButton.setTitle("받기", for: .normal)
@@ -211,7 +211,7 @@ extension PurchaseListViewController: UITableViewDelegate, UITableViewDataSource
             if isFiltering {
                 cell.appNameLabel.text = filteredResultsNotInPhone[indexPath.row].ApplicationName
                 cell.appIconImageView.setImage(url: filteredResultsNotInPhone[indexPath.row].IconImage)
-                if UserDefaults.standard.value(forKey: filteredResultsNotInPhone[indexPath.row].ApplicationName) != nil {
+                if UserDefaults.standard.value(forKey: "\(filteredResultsNotInPhone[indexPath.row].ApplicationId)") != nil {
                     cell.downloadButton.setTitle("열기", for: .normal)
                 } else {
                     cell.downloadButton.setTitle("받기", for: .normal)
@@ -226,7 +226,7 @@ extension PurchaseListViewController: UITableViewDelegate, UITableViewDataSource
             } else {
                 cell.appNameLabel.text = purchaseResultsNotInPhone[indexPath.row].ApplicationName
                 cell.appIconImageView.setImage(url: purchaseResultsNotInPhone[indexPath.row].IconImage)
-                if UserDefaults.standard.value(forKey: purchaseResultsNotInPhone[indexPath.row].ApplicationName) != nil {
+                if UserDefaults.standard.value(forKey: "\(purchaseResultsNotInPhone[indexPath.row].ApplicationId)") != nil {
                     cell.downloadButton.setTitle("열기", for: .normal)
                 } else {
                     cell.downloadButton.setTitle("받기", for: .normal)

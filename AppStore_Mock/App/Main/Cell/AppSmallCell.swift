@@ -78,7 +78,7 @@ extension AppSmallCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 cell.rating = String(indexPath.row + 1)
                 cell.data = result[indexPath.row]
                 cell.downloadButton.tag = indexPath.row
-                if UserDefaults.standard.value(forKey: result[indexPath.row].ApplicationName) != nil {
+                if UserDefaults.standard.value(forKey: "\(result[indexPath.row].ApplicationId)") != nil {
                     cell.downloadButton.removeTarget(nil, action: nil, for: .allEvents)
                     cell.downloadButton.setTitle("열기", for: .normal)
                 } else {
@@ -96,7 +96,7 @@ extension AppSmallCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppInsideSmallCell", for: indexPath) as? AppInsideSmallCell, let result = result {
                 cell.data = result[indexPath.row]
                 cell.downloadButton.tag = indexPath.row
-                if UserDefaults.standard.value(forKey: result[indexPath.row].ApplicationName) != nil {
+                if UserDefaults.standard.value(forKey: "\(result[indexPath.row].ApplicationId)") != nil {
                     cell.downloadButton.removeTarget(nil, action: nil, for: .allEvents)
                     cell.downloadButton.setTitle("열기", for: .normal)
                 } else {

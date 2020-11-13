@@ -54,6 +54,7 @@ class AppListViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -133,16 +134,17 @@ extension AppListViewController: UITableViewDelegate, UITableViewDataSource {
             cell.inAppPurchaseLabel.isHidden = true
         }
                 
-        if UserDefaults.standard.value(forKey: results[indexPath.row].ApplicationName) != nil {
+        if UserDefaults.standard.value(forKey: "\(results[indexPath.row].ApplicationId)") != nil {
+            print(results[indexPath.row].ApplicationName + "은 현재 앱리스트에 존재")
             cell.downloadButton.setTitle("열기", for: .normal)
         } else {
             if results[indexPath.row].Price > 0 {
                 cell.downloadButton.setTitle(results[indexPath.row].Price.price, for: .normal)
             } else {
                 cell.downloadButton.setTitle("받기", for: .normal)
-                cell.tag = indexPath.row
-                cell.downloadButton.addTarget(self, action: #selector(downloadButtonClicked(sender:)), for: .touchUpInside)
             }
+            cell.downloadButton.tag = indexPath.row
+            cell.downloadButton.addTarget(self, action: #selector(downloadButtonClicked(sender:)), for: .touchUpInside)
         }
         
         return cell

@@ -42,6 +42,12 @@ class TodayMainViewController: UIViewController {
         TodayDataManager.shared.getAdvertisements(viewController: self, lastCursor: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.collectionView.reloadData()
+    }
+    
+    
 
     /*
     // MARK: - Navigation
